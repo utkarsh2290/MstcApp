@@ -1,9 +1,11 @@
 package com.example.mstcapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.TextView;
 
@@ -20,6 +22,7 @@ public class resourcesFragment extends Fragment {
 
     RecyclerView recyclerView;  //views on the layout
     TextView tv;
+    Button stc_resources;
     List<String> domains= new ArrayList<>(); //list for recycler view
 
     @Nullable
@@ -38,13 +41,20 @@ public class resourcesFragment extends Fragment {
         domains.add("Random");
         domains.add("Random");domains.add("Random");domains.add("Random");domains.add("Random");
         domains.add("Random");
+
+        stc_resources=(Button)getView().findViewById(R.id.stc_resources);
         recyclerView=(RecyclerView)getView().findViewById(R.id.recyclerview);
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(gridLayoutManager);   //setting layout as grid in the recycler view
         recyclerView.setAdapter(new ResourcesAdapter(domains));//adapter for the recycler view
 
-        tv=(TextView)getView().findViewById(R.id.domain_header);
-        tv.setText("Changed");  //was made for testing purposes
+        stc_resources.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(),SignInActivity.class));
+            }
+        });
+
     }
 }
