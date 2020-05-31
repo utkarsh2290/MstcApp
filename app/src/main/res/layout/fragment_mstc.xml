@@ -4,6 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="120sp"
@@ -21,12 +23,13 @@
 
     <ImageView
         android:id="@+id/stcImage"
-        android:layout_width="116sp"
-        android:layout_height="100sp"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:layout_below="@id/textView"
         android:layout_marginLeft="20sp"
-        android:layout_marginTop="70sp"
-        app:srcCompat="@drawable/pp" />
+        android:layout_marginTop="40dp"
+        android:background="@drawable/cirular_mstc_button"
+        app:srcCompat="@drawable/mstclogo" />
 
     <TextView
         android:id="@+id/stcName"
@@ -69,4 +72,57 @@
         android:padding="10sp"
         android:text="LINKEDIN"
         android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stcLinked"
+        android:orientation="vertical">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/stcLinked"
+            android:layout_marginTop="20dp"
+            android:background="@color/white">
+
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="230dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/stcLinked"
+                android:layout_marginLeft="100dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="100dp"
+                android:background="@color/colorPrimary"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="#000000"
+                app:tabMode="fixed"
+                app:tabTextColor="@color/white">
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Info" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Board" />
+            </com.google.android.material.tabs.TabLayout>
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+
 </RelativeLayout>
