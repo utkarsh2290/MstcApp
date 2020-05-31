@@ -52,7 +52,7 @@ public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.Reso
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i =new Intent(v.getContext(),ResourcesAndroid.class);
+                    Intent i =new Intent(v.getContext(), ResourcesDetails.class);
                     i.putExtra("test",domains.get(getAdapterPosition()));
                     v.getContext().startActivity(i);
                 }
