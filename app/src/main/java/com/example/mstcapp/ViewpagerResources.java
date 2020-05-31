@@ -12,6 +12,7 @@ import java.util.List;
 
 public class ViewpagerResources extends FragmentStatePagerAdapter {
 
+    //comments
     private final List<Fragment> fragmentList=new ArrayList<>();
     private final List<String> listTitles=new ArrayList<>();
     public ViewpagerResources(@NonNull FragmentManager fm) {
