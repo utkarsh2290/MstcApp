@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -10,12 +10,12 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewpagerResources extends FragmentStatePagerAdapter {
+public class ViewpagerResAdapter extends FragmentStatePagerAdapter {
 
     //comments
     private final List<Fragment> fragmentList=new ArrayList<>();
     private final List<String> listTitles=new ArrayList<>();
-    public ViewpagerResources(@NonNull FragmentManager fm) {
+    public ViewpagerResAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 

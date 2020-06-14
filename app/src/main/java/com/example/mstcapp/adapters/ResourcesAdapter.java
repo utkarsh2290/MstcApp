@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.adapters;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.mstcapp.R;
+import com.example.mstcapp.resourcespage.ResourcesDetails;
 
 import java.util.ArrayList;
 import java.util.List;

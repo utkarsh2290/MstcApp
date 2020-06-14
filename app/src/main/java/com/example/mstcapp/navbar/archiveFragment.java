@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.navbar;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,9 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.mstcapp.R;
+import com.example.mstcapp.SignInActivity;
 
 public class archiveFragment extends Fragment {
 
@@ -29,7 +32,7 @@ public class archiveFragment extends Fragment {
         stc_archive.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(),SignInActivity.class));
+                startActivity(new Intent(getContext(), SignInActivity.class));
             }
         });
 

@@ -1,21 +1,17 @@
-package com.example.mstcapp;
+package com.example.mstcapp.resourcespage;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mstcapp.R;
+import com.example.mstcapp.adapters.ViewpagerResAdapter;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
-
-import java.lang.invoke.ConstantCallSite;
 
 public class ResourcesDetails extends AppCompatActivity {
     private TabLayout tabLayout;
@@ -34,7 +30,7 @@ public class ResourcesDetails extends AppCompatActivity {
         tabLayout=findViewById(R.id.tab_view_resources);
         viewPager=findViewById(R.id.viewpager_res);
 
-        ViewpagerResources adapter=new ViewpagerResources(getSupportFragmentManager());
+        ViewpagerResAdapter adapter=new ViewpagerResAdapter(getSupportFragmentManager());
         adapter.addFragment(new roadmapFragment(),"Roadmap");
         adapter.addFragment(new resfolderFragment(),"Resources");
         adapter.addFragment(new articlelinksFragment(),"Articles");

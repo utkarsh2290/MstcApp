@@ -7,6 +7,10 @@ import androidx.fragment.app.Fragment;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.mstcapp.navbar.archiveFragment;
+import com.example.mstcapp.navbar.feedFragment;
+import com.example.mstcapp.navbar.mstcFragment;
+import com.example.mstcapp.navbar.resourcesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
