@@ -4,12 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".MainActivity">
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/appbar_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="96dp"
+            android:padding="16dp"
+            android:background="@color/white">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SAMPLE"
+                android:layout_centerVertical="true"
+                android:textSize="28dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/montserrat"
+                android:id="@+id/appbar_title"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="28dp"
+                android:background="@color/white"
+                android:src="@drawable/stc_appbarlogo"
+                android:id="@+id/stclogo_appbar"/>
+        </RelativeLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/appbar_layout"
         android:layout_above="@+id/navigation_bottom" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -17,9 +51,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
+        android:background="@color/white"
+        app:itemIconTint="@color/colorPrimary"
         app:menu="@menu/bottom_navbar"/>
 
 

@@ -28,13 +28,6 @@ public class mstcFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        stc_mstc=(Button)getView().findViewById(R.id.stc_mstc);
 
-        stc_mstc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), SignInActivity.class));
-            }
-        });
     }
 }

@@ -48,19 +48,14 @@ public class feedFragment extends Fragment {
         Desc_sample.add("This the sample description for post  This is clickable and the insta post opens in new browser.");
 
         recyclerView_feed=(RecyclerView)getView().findViewById(R.id.recyclerview_feed);
-        stc_feed=(Button)getView().findViewById(R.id.stc_home);
+
 
         //layout for recycler view to have feed images or something
 
         recyclerView_feed.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView_feed.setAdapter(new FeedAdapter(URLS_sample,Desc_sample));
 
-        stc_feed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), SignInActivity.class));
-            }
-        });
+
 
     }
 }

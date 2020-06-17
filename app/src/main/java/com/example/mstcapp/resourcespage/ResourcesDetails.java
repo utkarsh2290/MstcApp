@@ -18,7 +18,7 @@ public class ResourcesDetails extends AppCompatActivity {
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
 
-    private TextView textView;
+    private TextView resappbar_title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class ResourcesDetails extends AppCompatActivity {
         setContentView(R.layout.activity_resources_details);
 
 
-        textView=findViewById(R.id.title);
+        resappbar_title=findViewById(R.id.resappbar_title);
         tabLayout=findViewById(R.id.tab_view_resources);
         viewPager=findViewById(R.id.viewpager_res);
 
@@ -42,7 +42,7 @@ public class ResourcesDetails extends AppCompatActivity {
         Intent i =getIntent();
         String test= i.getStringExtra("test");
         Toast.makeText(getApplicationContext(),test+"Resources",Toast.LENGTH_SHORT).show();
-        textView.setText(test);
+        resappbar_title.setText(test);
 
 
 

@@ -27,14 +27,7 @@ public class archiveFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        stc_archive=(Button)getView().findViewById(R.id.stc_archive);
 
-        stc_archive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), SignInActivity.class));
-            }
-        });
 
 
     }
