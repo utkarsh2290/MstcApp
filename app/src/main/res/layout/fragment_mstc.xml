@@ -2,81 +2,137 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
+    android:layout_height="match_parent"
+    android:background="#EBEFF8">
 
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="120sp"
-        android:layout_height="50sp"
+        android:id="@+id/info_AboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignLeft="@id/stcImage"
         android:layout_alignParentTop="true"
         android:layout_marginTop="68px"
-        android:background="#C4C4C4"
-        android:backgroundTint="#C4C4C4"
+        android:fontFamily="@font/montserrat_medium"
         android:padding="10sp"
-        android:text="ABOUT US"
+        android:text="INFORMATION"
         android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textSize="28sp" />
 
     <ImageView
         android:id="@+id/stcImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_below="@id/textView"
+        android:layout_below="@id/info_AboutUs"
         android:layout_marginLeft="20sp"
         android:layout_marginTop="40dp"
         android:background="@drawable/cirular_mstc_button"
         app:srcCompat="@drawable/mstclogo" />
 
+    <Button
+        android:id="@+id/button_facebook"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button_instagram"
+        android:layout_alignRight="@id/button_instagram"
+        android:layout_marginTop="10dp"
+        android:background="#EBEFF8"
+        android:drawableLeft="@drawable/ic_ant_design_facebook_outlined"
+        android:padding="10dp"
+        android:text="\@MSTC_VIT" />
+
     <TextView
-        android:id="@+id/stcName"
-        android:layout_width="200sp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView"
-        android:layout_marginLeft="200sp"
-        android:layout_marginTop="30sp"
-        android:background="#C4C4C4"
-        android:backgroundTint="#C4C4C4"
-        android:padding="10sp"
-        android:text="Stc Chapter"
-        android:textColor="#000000"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
-    <Button
-        android:id="@+id/stcInsta"
+        android:id="@+id/student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/stcName"
-        android:layout_alignLeft="@id/stcName"
-        android:layout_marginTop="10sp"
+        android:layout_below="@id/info_AboutUs"
+        android:layout_alignTop="@id/stcImage"
+        android:layout_marginLeft="25dp"
         android:layout_toRightOf="@id/stcImage"
-        android:background="#C4C4C4"
-        android:backgroundTint="#C4C4C4"
-        android:padding="10sp"
-        android:text="INSTAGRAM"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="STUDENT"
+        android:textColor="#000000"
+        android:textSize="32sp"
         android:textStyle="bold" />
 
-    <Button
-        android:id="@+id/stcLinked"
+    <TextView
+        android:id="@+id/technical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/stcInsta"
-        android:layout_alignLeft="@id/stcInsta"
-        android:layout_marginTop="10sp"
-        android:background="#C4C4C4"
-        android:backgroundTint="#C4C4C4"
-        android:padding="10sp"
-        android:text="LINKEDIN"
+        android:layout_below="@id/student"
+        android:layout_alignLeft="@id/student"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="TECHNICAL"
+        android:textColor="#000000"
+        android:textSize="32sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/community"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/technical"
+        android:layout_alignLeft="@id/student"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="COMMUNITY"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/mstclogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/info_AboutUs"
+        android:layout_alignBottom="@id/info_AboutUs"
+        android:layout_alignParentRight="true"
+        android:padding="3dp"
+        app:srcCompat="@drawable/ic_stclogo" />
+
+    <Button
+        android:id="@+id/button_instagram"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stcImage"
+        android:layout_alignLeft="@id/stcImage"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="20dp"
+        android:background="#EBEFF8"
+        android:drawableLeft="@drawable/ic_dashicons_instagram"
+        android:padding="10dp"
+        android:text="\@MSTC_VIT" />
+
+    <Button
+        android:id="@+id/button_linkedin"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/button_instagram"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:background="#EBEFF8"
+        android:drawableLeft="@drawable/ic_ant_design_linkedin_outlined"
+        android:padding="10dp"
+        android:text="\@MSTC_VIT" />
+
+    <Button
+        android:id="@+id/button_medium"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/button_facebook"
+        android:layout_alignLeft="@id/button_linkedin"
+        android:background="#EBEFF8"
+        android:drawableLeft="@drawable/ic_ant_design_medium_outlined"
+        android:padding="10dp"
+        android:text="\@MSTC_VIT" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/stcLinked"
+        android:layout_below="@id/button_facebook"
         android:orientation="vertical">
 
 
@@ -84,34 +140,36 @@
             android:id="@+id/appBarLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/stcLinked"
+            android:layout_below="@id/button_facebook"
             android:layout_marginTop="20dp"
-            android:background="@color/white">
+            android:background="#EBEFF8"
+            android:elevation="0dp"
+            app:elevation="0dp">
 
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout"
-                android:layout_width="230dp"
+                android:layout_width="270dp"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/stcLinked"
-                android:layout_marginLeft="100dp"
-                android:layout_marginTop="40dp"
-                android:layout_marginRight="100dp"
-                android:background="@color/colorPrimary"
+                android:layout_below="@id/button_facebook"
+                android:layout_marginStart="70dp"
+                android:background="@drawable/background_tab"
+                app:layout_scrollFlags="noScroll"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="#000000"
                 app:tabMode="fixed"
-                app:tabTextColor="@color/white">
+                app:tabSelectedTextColor="#000000"
+                app:tabTextColor="#666666">
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Info" />
+                    android:text="ABOUT US" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Board" />
+                    android:text="OUR BOARD" />
             </com.google.android.material.tabs.TabLayout>
 
 

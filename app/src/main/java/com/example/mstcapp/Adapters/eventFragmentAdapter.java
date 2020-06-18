@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,14 +10,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.mstcapp.R;
+import com.example.mstcapp.onlineFootprint.eventsFragments;
+
 import java.util.List;
 
-public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.myViewHolder> {
+public class eventFragmentAdapter extends RecyclerView.Adapter<eventFragmentAdapter.myViewHolder> {
 
     Context mContext;
     List<eventsFragments> mData;
 
-    public RecyclerViewAdapter(Context mContext, List<eventsFragments> mData) {
+    public eventFragmentAdapter(Context mContext, List<eventsFragments> mData) {
         this.mContext = mContext;
         this.mData = mData;
     }

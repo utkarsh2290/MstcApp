@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Adapters;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -9,34 +9,36 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class viewArchivePagerAdapter extends FragmentPagerAdapter {
+public class aboutPagerAdapter extends FragmentPagerAdapter {
 
-    private final List<Fragment> fragmentList2=new ArrayList<>();
-    private final List<String>fragmentListTitles2=new ArrayList<>();
+    private final List<Fragment>fragmentList=new ArrayList<>();
+    private final List<String>fragmentListTitles=new ArrayList<>();
 
-    public viewArchivePagerAdapter(@NonNull FragmentManager fm) {
+    public aboutPagerAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
+
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return  fragmentList2.get(position);
+        return fragmentList.get(position);
     }
+
 
     @Override
     public int getCount() {
-        return  fragmentListTitles2.size();
+        return fragmentListTitles.size();
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return fragmentListTitles2.get(position);
+        return fragmentListTitles.get(position);
     }
 
     public void addFragment(Fragment fragment, String Title){
-        fragmentList2.add(fragment);
-        fragmentListTitles2.add(Title);
+        fragmentList.add(fragment);
+        fragmentListTitles.add(Title);
     }
 }

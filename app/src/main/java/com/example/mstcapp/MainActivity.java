@@ -3,16 +3,15 @@ package com.example.mstcapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.TableLayout;
 
+import com.example.mstcapp.ParentFragments.onlineFootprintFragment;
+import com.example.mstcapp.ParentFragments.feedFragment;
+import com.example.mstcapp.ParentFragments.aboutUsFragment;
+import com.example.mstcapp.ParentFragments.resourcesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
-
-import java.security.cert.TrustAnchor;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,10 +47,10 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new resourcesFragment();
                             break;
                         case R.id.nav_archive:
-                            selectedFragment = new archiveFragment();
+                            selectedFragment = new onlineFootprintFragment();
                             break;
                         case R.id.mstc:
-                            selectedFragment = new mstcFragment();
+                            selectedFragment = new aboutUsFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

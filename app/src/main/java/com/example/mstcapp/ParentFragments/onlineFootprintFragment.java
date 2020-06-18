@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.ParentFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,23 +10,28 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.mstcapp.Adapters.onlineFootprintPagerAdapter;
+import com.example.mstcapp.R;
+import com.example.mstcapp.onlineFootprint.eventsFragments;
+import com.example.mstcapp.onlineFootprint.githubFragment;
+import com.example.mstcapp.onlineFootprint.projectFragment;
 import com.google.android.material.tabs.TabLayout;
 
-public class archiveFragment extends Fragment {
+public class onlineFootprintFragment extends Fragment {
 
 
     View onlineSubFragment;
     TabLayout tabLayout2;
     ViewPager viewPager2;
 
-    public archiveFragment() {
+    public onlineFootprintFragment() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        onlineSubFragment=inflater.inflate(R.layout.fragment_archive,container,false);
+        onlineSubFragment=inflater.inflate(R.layout.fragment_online_footprint,container,false);
 
         viewPager2=onlineSubFragment.findViewById(R.id.viewPager2);
         tabLayout2=onlineSubFragment.findViewById(R.id.tabLayout2);
@@ -64,11 +69,10 @@ public class archiveFragment extends Fragment {
 
     private void setUpViewPager(ViewPager viewPager) {
         //ADDING FRAGMENTS
-        viewArchivePagerAdapter adapter=new viewArchivePagerAdapter(getChildFragmentManager());
+        onlineFootprintPagerAdapter adapter=new onlineFootprintPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new eventsFragments(),"Events");
         adapter.addFragment(new projectFragment(),"Projects");
-        adapter.addFragment(new githubFragment()
-                ,"Github Project");
+        adapter.addFragment(new githubFragment(),"Github Project");
 
         //ADAPTER SETUP
         viewPager2.setAdapter(adapter);

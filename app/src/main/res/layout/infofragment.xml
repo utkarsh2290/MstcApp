@@ -6,10 +6,16 @@
     <TextView
         android:id="@+id/infotv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_centerInParent="true"
+        android:layout_margin="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:background="@color/white"
         android:gravity="center"
         android:text="INFORMATION ABOUT MSTC"
-        android:textStyle="bold"
-        android:textSize="24sp"/>
+        android:textSize="24sp"
+        android:textStyle="bold" />
 </RelativeLayout>

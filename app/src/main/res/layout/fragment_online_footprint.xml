@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="#EBEFF8">
 
     <TextView
         android:id="@+id/onlineTV"
         android:layout_width="wrap_content"
-        android:layout_height="50sp"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="50px"
         android:layout_marginTop="68px"
-        android:background="#C4C4C4"
-        android:backgroundTint="#C4C4C4"
+        android:backgroundTint="#EBEFF8"
+        android:fontFamily="@font/montserrat_medium"
         android:padding="10sp"
-        android:text="ONLINE FOOTPRINT"
+        android:text="HIGHLIGHTS"
         android:textColor="#000000"
-        android:textSize="20sp"
+        android:textSize="28sp"
         android:textStyle="bold" />
 
-    <ImageButton
-        android:id="@+id/mstcButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+    <ImageView
+        android:id="@+id/mstclogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/onlineTV"
+        android:layout_alignBottom="@id/onlineTV"
         android:layout_alignParentRight="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/cirular_mstc_button"
-        android:src="@drawable/stclogoo" />
+        android:padding="3dp"
+        app:srcCompat="@drawable/ic_stclogo" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -42,20 +42,18 @@
             android:id="@+id/appBarLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
-            android:background="@color/white">
+            android:background="#EBEFF8">
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabLayout2"
-                android:layout_width="260dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="40dp"
-                android:background="@color/colorPrimary"
+                android:background="@color/white"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="#000000"
+                app:tabIndicatorColor=" #332CAB"
                 app:tabMode="fixed"
-                app:tabTextColor="@color/white">
+                app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:tabTextColor="#727272">
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"

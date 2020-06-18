@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.aboutFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,6 +10,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.example.mstcapp.R;
 
 public class boardFragment extends Fragment {
     View view1;
@@ -35,6 +39,13 @@ public class boardFragment extends Fragment {
         imageView5.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.mstclogo,null));
         imageView6.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.mstclogo,null));
         imageView7.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.mstclogo,null));
+
+        /*FragmentManager manager = getChildFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        transaction.add(R.id.fragment_container, new infoFragment());
+        transaction.commit();
+
+*/
         return view1;
     }
 }

@@ -4,21 +4,21 @@
         <item
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_white_24dp"
-            android:title="Home" />
+            android:title="" />
 
         <item
             android:id="@+id/nav_resources"
             android:icon="@drawable/ic_map_white_24dp"
-            android:title="Resources" />
+            android:title="" />
 
         <item
             android:id="@+id/nav_archive"
             android:icon="@drawable/ic_archive_white_24dp"
-            android:title="Online Footprint" />
+            android:title="" />
 
     <item
         android:id="@+id/mstc"
         android:icon="@drawable/ic_info_outline_white_24dp"
-        android:title="Info" />
+        android:title="" />
 
 </menu>
