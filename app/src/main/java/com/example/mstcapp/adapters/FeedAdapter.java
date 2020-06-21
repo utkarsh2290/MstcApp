@@ -17,9 +17,14 @@ import java.util.List;
 public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     List <Integer> samples=new ArrayList<>();
     List <String> desc_sample=new ArrayList<>();
-    public FeedAdapter(List<Integer> urls_sample, List<String> desc) {
+    List <String> title_sample=new ArrayList<>();
+    List <String> link_sample=new ArrayList<>();
+
+    public FeedAdapter(List<Integer> urls_sample, List<String> desc, List <String> title,List <String> links) {
     samples=urls_sample;
     desc_sample=desc;
+    title_sample=title;
+    link_sample=links;
     }
 
     @NonNull
@@ -34,7 +39,9 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     @Override
     public void onBindViewHolder(@NonNull FeedView holder, int position) {
         holder.imageView.setImageResource(samples.get(position));
-        holder.textView.setText(desc_sample.get(position));
+        holder.desc_textView.setText(desc_sample.get(position));
+        holder.title_textvView.setText(title_sample.get(position));
+        holder.link_textView.setText(link_sample.get(position));
     }
 
     @Override
@@ -45,11 +52,13 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     public class FeedView extends RecyclerView.ViewHolder{
 
         ImageView imageView;
-        TextView textView;
+        TextView desc_textView,title_textvView,link_textView;
         public FeedView(@NonNull View itemView) {
             super(itemView);
             imageView=(ImageView)itemView.findViewById(R.id.feed_image);
-            textView=itemView.findViewById(R.id.feed_description);
+            desc_textView=itemView.findViewById(R.id.feed_description);
+            title_textvView=itemView.findViewById(R.id.feed_title);
+            link_textView=itemView.findViewById(R.id.feed_link);
 
         }
     }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,10 +18,12 @@ import java.util.List;
 
 public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.ResourcesView> {
      static List<String> domains= new ArrayList<>();
+     List<Integer> domain_background_Id=new ArrayList<>();
 
 
-    public ResourcesAdapter(List<String> domains) {
+    public ResourcesAdapter(List<String> domains,List <Integer> domainbg) {
         this.domains = domains;    //constructor used for initialising the list in the the view
+        domain_background_Id=domainbg;
     }
 
     @NonNull
@@ -34,7 +37,7 @@ public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.Reso
     @Override
     public void onBindViewHolder(@NonNull ResourcesView holder, int position) {
         holder.texttitle.setText(domains.get(position));        //sets the list to the holder
-
+        holder.domain_bgImage.setImageResource(domain_background_Id.get(position));
 
     }
 
@@ -46,9 +49,11 @@ public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.Reso
     public static class ResourcesView extends RecyclerView.ViewHolder{
 
         TextView texttitle;
+        ImageView domain_bgImage;
         public ResourcesView(@NonNull View itemView) {
             super(itemView);
             texttitle=(TextView)itemView.findViewById(R.id.domaintitle);
+            domain_bgImage=(ImageView)itemView.findViewById(R.id.res_domainImage) ;
 
             //OnClick Listener to go to the resource page of the particular domain when clicked
 

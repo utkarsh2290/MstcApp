@@ -8,7 +8,7 @@
     app:contentPadding="5dp"
     app:cardUseCompatPadding="true"
     android:padding="10dp">
-<LinearLayout
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -20,12 +20,39 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         android:src="@drawable/xbox" />
+
+    <TextView
+        android:id="@+id/feed_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feed_image"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat"
+        android:text="This is the text"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/feed_title"
+        android:layout_marginTop="4dp"
         android:id="@+id/feed_description"
-        android:text="This is the text"
-        android:textSize="20sp"/>
-</LinearLayout>
+        android:fontFamily="@font/montserrat"
+        android:textColor="#545454"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feed_description"
+        android:id="@+id/feed_link"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/link_blue"
+        android:textSize="16sp"/>
+
+</RelativeLayout>
 
 </androidx.cardview.widget.CardView>
