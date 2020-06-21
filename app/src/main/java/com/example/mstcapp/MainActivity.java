@@ -4,16 +4,25 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 import com.example.mstcapp.ParentFragments.onlineFootprintFragment;
 import com.example.mstcapp.ParentFragments.feedFragment;
 import com.example.mstcapp.ParentFragments.aboutUsFragment;
 import com.example.mstcapp.ParentFragments.resourcesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button login,logout;
+    FirebaseAuth firebaseAuth;
 
 
     @Override
@@ -24,8 +33,37 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
+        FirebaseApp.initializeApp(getApplicationContext());
+        firebaseAuth=FirebaseAuth.getInstance();
+        login=findViewById(R.id.button);
+        //logout=findViewById(R.id.logout);
 
 
+        /*if(firebaseAuth.getCurrentUser()!=null){
+            Toast.makeText(MainActivity.this, "User already logged in", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getApplicationContext(),aboutUsFragment.class));
+            finish();
+        }*/
+
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            }
+        });
+/*
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(MainActivity.this, aboutUsFragment.class));
+                finish();
+
+
+            }
+        });
+*/
 
         //IF NO BUTTON IS SELECTED, FEED WILL BE SHOWN
         if (savedInstanceState == null) {
