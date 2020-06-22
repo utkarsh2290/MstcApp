@@ -13,76 +13,65 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.Adapters.eventFragmentAdapter;
 import com.example.mstcapp.Adapters.githubFragmentAdapter;
+import com.example.mstcapp.Adapters.projectRecyclerAdapter;
 import com.example.mstcapp.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class githubFragment extends Fragment {
 
-    private String headerProj;
-    private String descriptionProj;
-    private String linkProj;
-    private int Photo;
-    View view;
+    private String titleGithubProj,linkGithubProj;
+    View view2;
+
     public githubFragment() {
     }
-/*
-    private RecyclerView recyclerView2;
-    private List<githubFragment> githubLists;
 
-    public githubFragment(String nameProj, String descripProj,int photo,String linkproj) {
-        headerProj= nameProj;
-        descriptionProj = descripProj;
-        Photo=photo;
-        linkProj=linkproj;
+    private RecyclerView recyclerView2;
+    private List<githubFragment> githubProjList;
+
+    public githubFragment(String titleGithubProj, String linkGithubProj) {
+        this.titleGithubProj = titleGithubProj;
+        this.linkGithubProj = linkGithubProj;
 
     }
 
     //GETTER
-    public String getHeaderProj() {
-        return headerProj;
+
+    public String getTitleGithubProj() {
+        return titleGithubProj;
     }
 
-    public String getDescriptionProj() {
-        return descriptionProj;
+    public String getLinkGithubProj() {
+        return linkGithubProj;
     }
-
-    public String getLinkProj() {
-        return linkProj;
-    }
-
-    public int getPhoto() {
-        return Photo;
-    }
-
 
     //SETTER
-    public void setHeaderProj(String headerProj) {
-        this.headerProj = headerProj;
+
+    public void setLinkGithubProj(String linkGithubProj) {
+        this.linkGithubProj = linkGithubProj;
     }
 
-    public void setDescriptionProj(String descriptionProj) {
-        this.descriptionProj = descriptionProj;
+    public void setTitleGithubProj(String titleGithubProj) {
+        this.titleGithubProj = titleGithubProj;
     }
-
-    public void setLinkProj(String linkProj) {
-        this.linkProj = linkProj;
-    }
-
-    public void setPhoto(int photo) {
-        Photo = photo;
-    }
-
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.github_proj_fragment,container,false);
-
-        recyclerView2=(RecyclerView)view.findViewById(R.id.github_recycler);
-        githubFragmentAdapter recyclerAdapter2= new githubFragmentAdapter(getContext(),githubLists);
+        view2=inflater.inflate(R.layout.github_proj_fragment,container,false);
+        recyclerView2=(RecyclerView)view2.findViewById(R.id.github_recycler);
+        githubFragmentAdapter githubFragmentAdapter= new githubFragmentAdapter(getContext(),githubProjList);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView2.setAdapter(recyclerAdapter2);
-        return view;
-    }*/
+        recyclerView2.setAdapter(githubFragmentAdapter);
+        return view2;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        githubProjList=new ArrayList<>();
+        githubProjList.add(new githubFragment("Covifight","https://github.com/NavdeepChawla/"));
+    }
 }

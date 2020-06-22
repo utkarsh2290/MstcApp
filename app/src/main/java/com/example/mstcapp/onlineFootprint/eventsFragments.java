@@ -19,9 +19,9 @@ import java.util.List;
 
 public class eventsFragments extends Fragment {
 
-    private String Header;
-    private String Description;
+    private String Header,Description,event_Insta_Link;
     private int Photo;
+
     View view;
 
     //Constructor
@@ -32,15 +32,21 @@ public class eventsFragments extends Fragment {
     private List<eventsFragments> eventsList;
 
 
-    public eventsFragments(String header,String description,int photo){
+    public eventsFragments(String header,String description,int photo,String event_insta_link){
         Header=header;
         Description=description;
         Photo=photo;
+        event_Insta_Link=event_insta_link;
     }
 
 
 
     //Getter
+
+    public String getEvent_Insta_Link() {
+        return event_Insta_Link;
+    }
+
     public String getHeader() {
         return Header;
     }
@@ -54,6 +60,10 @@ public class eventsFragments extends Fragment {
     }
 
     //Setter
+
+    public void setEvent_Insta_Link(String event_Insta_Link) {
+        this.event_Insta_Link = event_Insta_Link;
+    }
     public void setHeader(String header) {
         Header = header;
     }
@@ -82,7 +92,7 @@ public class eventsFragments extends Fragment {
         super.onCreate(savedInstanceState);
 
         eventsList=new ArrayList<>();
-        eventsList.add(new eventsFragments("Brew","Our Flagship Event",R.drawable.pp));
-        eventsList.add(new eventsFragments("Docker","Another Event",R.drawable.pp));
+        eventsList.add(new eventsFragments("Brew","Our Flagship Event",R.drawable.pp,"https://www.instagram.com/mstcvit/"));
+        eventsList.add(new eventsFragments("Docker","Another Event",R.drawable.pp,"https://www.instagram.com/mstcvit/"));
     }
 }

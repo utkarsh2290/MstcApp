@@ -33,38 +33,6 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-        FirebaseApp.initializeApp(getApplicationContext());
-        firebaseAuth=FirebaseAuth.getInstance();
-        login=findViewById(R.id.button);
-        //logout=findViewById(R.id.logout);
-
-
-        /*if(firebaseAuth.getCurrentUser()!=null){
-            Toast.makeText(MainActivity.this, "User already logged in", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(getApplicationContext(),aboutUsFragment.class));
-            finish();
-        }*/
-
-
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
-            }
-        });
-/*
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(MainActivity.this, aboutUsFragment.class));
-                finish();
-
-
-            }
-        });
-*/
-
         //IF NO BUTTON IS SELECTED, FEED WILL BE SHOWN
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

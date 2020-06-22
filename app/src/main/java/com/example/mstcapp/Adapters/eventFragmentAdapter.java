@@ -40,6 +40,7 @@ public class eventFragmentAdapter extends RecyclerView.Adapter<eventFragmentAdap
         holder.tv_header.setText(mData.get(position).getHeader());
         holder.tv_descrip.setText(mData.get(position).getDescription());
         holder.image_event.setImageResource(mData.get(position).getPhoto());
+        holder.tv_instaLink_event.setText(mData.get(position).getEvent_Insta_Link());
 
     }
 
@@ -50,16 +51,16 @@ public class eventFragmentAdapter extends RecyclerView.Adapter<eventFragmentAdap
 
     public static class myViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView tv_header;
-        private TextView tv_descrip;
+        private TextView tv_header,tv_descrip,tv_instaLink_event;
         private ImageView image_event;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tv_header=(TextView)itemView.findViewById(R.id.name_event);
-            tv_descrip=(TextView)itemView.findViewById(R.id.descr_event);
+            tv_header=(TextView)itemView.findViewById(R.id.tv__name_event);
+            tv_descrip=(TextView)itemView.findViewById(R.id.tv_descr_event);
             image_event=(ImageView)itemView.findViewById(R.id.image_event);
+            tv_instaLink_event=(TextView)itemView.findViewById(R.id.tv_link_event);
         }
 
     }

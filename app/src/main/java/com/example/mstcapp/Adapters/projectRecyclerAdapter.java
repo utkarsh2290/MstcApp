@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mstcapp.R;
 import com.example.mstcapp.onlineFootprint.projectFragment;
 
+import org.w3c.dom.Text;
+
+import java.text.CollationElementIterator;
 import java.util.List;
 
 public class projectRecyclerAdapter extends RecyclerView.Adapter<projectRecyclerAdapter.myViewHolder> {
@@ -38,6 +41,9 @@ public class projectRecyclerAdapter extends RecyclerView.Adapter<projectRecycler
     public void onBindViewHolder(@NonNull projectRecyclerAdapter.myViewHolder holder, int position) {
         holder.proj_name.setText(mData1.get(position).getProjHeader());
         holder.proj_descrip.setText(mData1.get(position).getDescriptionProj());
+        holder.proj_mediumLink.setText(mData1.get(position).getMediumLink_Proj());
+        holder.proj_contributors.setText(mData1.get(position).getContributorsProj());
+
     }
 
     @Override
@@ -47,16 +53,15 @@ public class projectRecyclerAdapter extends RecyclerView.Adapter<projectRecycler
 
     public static class myViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView proj_name;
-        private TextView proj_descrip;
+        private TextView proj_name,proj_descrip,proj_contributors,proj_mediumLink;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            proj_name = (TextView) itemView.findViewById(R.id.name_proj);
-            proj_descrip = (TextView) itemView.findViewById(R.id.descrip_proj);
-
-
+            proj_name = (TextView) itemView.findViewById(R.id.tv_name_proj);
+            proj_descrip = (TextView) itemView.findViewById(R.id.tv_descrip_proj);
+            proj_contributors=(TextView)itemView.findViewById(R.id.tv_contributors_proj);
+            proj_mediumLink=(TextView)itemView.findViewById(R.id.tv_mediumLink_proj);
         }
     }
 }
