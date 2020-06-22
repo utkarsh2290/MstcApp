@@ -1,77 +1,280 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="30dp"
-    android:background="@color/white">
+    android:background="@color/white"
+    android:padding="10dp">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp">
 
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        tools:src="@drawable/mstclogo" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@id/imageView"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        tools:src="@drawable/mstclogo" />
+                <RelativeLayout
+                    android:id="@+id/rPresident"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignLeft="@id/imageView"
-        android:layout_alignTop="@id/imageView2"
-        android:layout_alignRight="@id/imageView"
-        android:layout_toRightOf="@id/imageView2"
-        tools:src="@drawable/mstclogo" />
+                    <ImageView
+                        android:id="@+id/photoPresident"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#332CAB"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/ic_stclogo" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignTop="@id/imageView2"
-        android:layout_marginStart="10dp"
-        android:layout_toRightOf="@id/imageView3"
-        tools:src="@drawable/mstclogo" />
+                    <TextView
+                        android:id="@+id/namePresident"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@id/photoPresident"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="NAME"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_below="@id/imageView2"
-        android:layout_alignLeft="@id/imageView2"
-        tools:src="@drawable/mstclogo" />
+                    <TextView
+                        android:id="@+id/postPresident"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/namePresident"
+                        android:layout_alignLeft="@id/namePresident"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="PRESIDENT"
+                        android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignLeft="@id/imageView3"
-        android:layout_alignTop="@id/imageView5"
-        android:layout_alignBottom="@id/imageView5"
-        tools:src="@drawable/mstclogo" />
+                    <TextView
+                        android:id="@+id/domainPresident"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/postPresident"
+                        android:layout_alignLeft="@id/postPresident"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="DOMAIN"
+                        android:textSize="16sp" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_alignLeft="@id/imageView4"
-        android:layout_alignTop="@id/imageView5"
-        android:layout_alignRight="@id/imageView4"
-        android:layout_alignBottom="@id/imageView5"
-        android:layout_toRightOf="@id/imageView3"
-        tools:srcCompat="@drawable/mstclogo" />
+                </RelativeLayout>
 
-</RelativeLayout>
+                <RelativeLayout
+                    android:id="@+id/rProjectLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rPresident"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/photoProLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#332CAB"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/ic_stclogo" />
+
+                    <TextView
+                        android:id="@+id/nameProLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@id/photoProLead"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="NAME"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/postProLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nameProLead"
+                        android:layout_alignLeft="@id/nameProLead"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="PROJECT LEAD"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/domainProLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/postProLead"
+                        android:layout_alignLeft="@id/nameProLead"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="DOMAIN"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rTechMentor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rProjectLead"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/photoTechMentor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#332CAB"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/ic_stclogo" />
+
+                    <TextView
+                        android:id="@+id/nameTechMentor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@id/photoTechMentor"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="NAME"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/postTechMentor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nameTechMentor"
+                        android:layout_alignLeft="@id/nameTechMentor"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="TECH MENTOR"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/domainTechMentor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/postTechMentor"
+                        android:layout_alignLeft="@id/nameTechMentor"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="DOMAIN"
+                        android:textSize="16sp" />
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rManageLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rTechMentor"
+                    android:layout_marginBottom="20dp">
+
+                    <ImageView
+                        android:id="@+id/photoManageLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#332CAB"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/ic_stclogo" />
+
+                    <TextView
+                        android:id="@+id/nameManageLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@id/photoManageLead"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="NAME"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/postManageLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nameManageLead"
+                        android:layout_alignLeft="@id/nameManageLead"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="MANAGEMENT LEAD"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/domainManageLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/postManageLead"
+                        android:layout_alignLeft="@id/nameManageLead"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="DOMAIN"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rFinanceLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rManageLead">
+
+                    <ImageView
+                        android:id="@+id/photoFinanceLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="#332CAB"
+                        android:padding="5dp"
+                        app:srcCompat="@drawable/ic_stclogo" />
+
+                    <TextView
+                        android:id="@+id/nameFinanceLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_toRightOf="@id/photoFinanceLead"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="NAME"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/postFinanceLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/nameFinanceLead"
+                        android:layout_alignLeft="@id/nameFinanceLead"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="FINANCE LEAD"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/domainFinanceLead"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/postFinanceLead"
+                        android:layout_alignLeft="@id/nameFinanceLead"
+                        android:layout_marginTop="7dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="DOMAIN"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+</ScrollView>
