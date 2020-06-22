@@ -36,7 +36,8 @@ public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.Reso
 
     @Override
     public void onBindViewHolder(@NonNull ResourcesView holder, int position) {
-        holder.texttitle.setText(domains.get(position));        //sets the list to the holder
+        //domain title and card
+        holder.texttitle.setText(domains.get(position));
         holder.domain_bgImage.setImageResource(domain_background_Id.get(position));
 
     }

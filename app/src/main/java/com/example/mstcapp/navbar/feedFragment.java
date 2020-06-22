@@ -35,6 +35,8 @@ public class feedFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //These below list are fo samples,will be remvoed after ingration with backend
+
         URLS_sample.add(R.drawable.xbox);
         URLS_sample.add(R.drawable.xbox);
         URLS_sample.add(R.drawable.xbox);

@@ -1,11 +1,9 @@
 package com.example.mstcapp.navbar;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
 import com.example.mstcapp.adapters.ResourcesAdapter;
-import com.example.mstcapp.SignInActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,11 +37,16 @@ public class resourcesFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        domains.add("Android");
-        domains.add("Web Dev");
-        domains.add("Front-End Web");
-        domains.add("Back-End Web");domains.add("Data Science");domains.add("Competitive coding");
 
+        //Domains title
+        domains.add("Android");
+        domains.add("Flutter");
+        domains.add("Front-End Web");
+        domains.add("Back-End Web");
+        domains.add("Data Science");
+        domains.add("Competitive coding");
+
+        //domains background image
         domain_backgroundId.add(R.drawable.android_symbol_green);
         domain_backgroundId.add(R.drawable.flutter_bg);
         domain_backgroundId.add(R.drawable.webdev_bg);
@@ -52,7 +54,7 @@ public class resourcesFragment extends Fragment {
         domain_backgroundId.add(R.drawable.bg_datascience);
         domain_backgroundId.add(R.drawable.competitive_bg);
 
-        recyclerView=(RecyclerView)getView().findViewById(R.id.recyclerview);
+        recyclerView=(RecyclerView)getView().findViewById(R.id.domains_recyclerview);
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(gridLayoutManager);   //setting layout as grid in the recycler view

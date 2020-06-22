@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.navigation_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-
+        // for the nav bar to have filled icon at the start
         if (savedInstanceState == null) {
             Menu menu=bottomNavigationView.getMenu();
             menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home);

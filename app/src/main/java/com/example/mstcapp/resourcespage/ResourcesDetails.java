@@ -17,7 +17,6 @@ public class ResourcesDetails extends AppCompatActivity {
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
-
     private TextView resappbar_title;
 
     @Override
@@ -30,6 +29,7 @@ public class ResourcesDetails extends AppCompatActivity {
         tabLayout=findViewById(R.id.tab_view_resources);
         viewPager=findViewById(R.id.viewpager_res);
 
+        //tab layout set up
         ViewpagerResAdapter adapter=new ViewpagerResAdapter(getSupportFragmentManager());
         adapter.addFragment(new roadmapFragment(),"Roadmap");
         adapter.addFragment(new resfolderFragment(),"Resources");
@@ -38,10 +38,10 @@ public class ResourcesDetails extends AppCompatActivity {
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
 
-
+       //gets the intent recieved for toast and appbar title
         Intent i =getIntent();
         String test= i.getStringExtra("test");
-        Toast.makeText(getApplicationContext(),test+"Resources",Toast.LENGTH_SHORT).show();
+        Toast.makeText(getApplicationContext(),test+" Resources",Toast.LENGTH_SHORT).show();
         resappbar_title.setText(test);
 
 
