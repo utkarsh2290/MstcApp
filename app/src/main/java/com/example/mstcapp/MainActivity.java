@@ -4,12 +4,26 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
+import com.example.mstcapp.ParentFragments.onlineFootprintFragment;
+import com.example.mstcapp.ParentFragments.feedFragment;
+import com.example.mstcapp.ParentFragments.aboutUsFragment;
+import com.example.mstcapp.ParentFragments.resourcesFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button login,logout;
+    FirebaseAuth firebaseAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.navigation_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
-
+        //IF NO BUTTON IS SELECTED, FEED WILL BE SHOWN
         if (savedInstanceState == null) {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new feedFragment()).commit();
@@ -39,10 +53,10 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new resourcesFragment();
                             break;
                         case R.id.nav_archive:
-                            selectedFragment = new archiveFragment();
+                            selectedFragment = new onlineFootprintFragment();
                             break;
                         case R.id.mstc:
-                            selectedFragment = new mstcFragment();
+                            selectedFragment = new aboutUsFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

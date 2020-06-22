@@ -17,10 +17,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/colorPrimary"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_navbar"/>
+        android:background="@color/white"
+        app:itemTextColor="#332CAB"
+        app:menu="@menu/bottom_navbar">
 
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open Login Activity" />
+
+    <Button
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/button"
+        android:text="Logout" />
 
 </RelativeLayout>
