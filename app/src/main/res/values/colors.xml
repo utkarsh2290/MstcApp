@@ -8,4 +8,5 @@
     <color name="black">#000000</color>
     <color name="gray">#545454</color>
     <color name="link_blue">#0645AD</color>
+    <color name="tabChecked">#E9E9E9</color>
 </resources>

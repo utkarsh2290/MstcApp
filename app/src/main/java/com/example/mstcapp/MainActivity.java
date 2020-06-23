@@ -8,16 +8,25 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Button;
 
-import com.example.mstcapp.navbar.archiveFragment;
 import com.example.mstcapp.navbar.feedFragment;
-import com.example.mstcapp.navbar.mstcFragment;
 import com.example.mstcapp.navbar.resourcesFragment;
+import com.example.mstcapp.ParentFragments.onlineFootprintFragment;
+
+import com.example.mstcapp.ParentFragments.aboutUsFragment;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView appbar_title;
+
+    private Button login,logout;
+    FirebaseAuth firebaseAuth;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.navigation_bottom);
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
 
+        //IF NO BUTTON IS SELECTED, FEED WILL BE SHOWN
         // for the nav bar to have filled icon at the start
         if (savedInstanceState == null) {
             Menu menu=bottomNavigationView.getMenu();
@@ -62,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_archive:
                             item.setIcon(R.drawable.ic_highlights);
                             appbar_title.setText("HIGHLIGHTS");
-                            selectedFragment = new archiveFragment();
+                            selectedFragment = new onlineFootprintFragment();
                             break;
                         case R.id.nav_info:
                             appbar_title.setText("INFORMATION");
                             item.setIcon(R.drawable.ic_profile1);
-                            selectedFragment = new mstcFragment();
+                            selectedFragment = new aboutUsFragment();
                             break;
                     }
                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
