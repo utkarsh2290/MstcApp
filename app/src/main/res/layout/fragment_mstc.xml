@@ -6,27 +6,12 @@
     android:background="#EBEFF8">
 
 
-    <TextView
-        android:id="@+id/info_AboutUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/stcImage"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="68px"
-        android:fontFamily="@font/montserrat_medium"
-        android:padding="10sp"
-        android:text="INFORMATION"
-        android:textColor="#000000"
-        android:textSize="28sp" />
-
     <ImageView
         android:id="@+id/stcImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:layout_below="@id/info_AboutUs"
-        android:layout_marginLeft="20sp"
-        android:layout_marginTop="40dp"
-        android:background="@drawable/cirular_mstc_button"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/mstclogo" />
 
     <Button
@@ -36,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/button_instagram"
         android:layout_alignRight="@id/button_instagram"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:background="#EBEFF8"
         android:drawableLeft="@drawable/ic_ant_design_facebook_outlined"
         android:padding="10dp"
@@ -46,49 +31,14 @@
         android:id="@+id/student"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/info_AboutUs"
         android:layout_alignTop="@id/stcImage"
         android:layout_marginLeft="25dp"
         android:layout_toRightOf="@id/stcImage"
         android:fontFamily="@font/montserrat_medium"
-        android:text="STUDENT"
+        android:text="@string/community_name"
         android:textColor="#000000"
-        android:textSize="32sp"
+        android:textSize="32dp"
         android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/technical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/student"
-        android:layout_alignLeft="@id/student"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="TECHNICAL"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/community"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/technical"
-        android:layout_alignLeft="@id/student"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="COMMUNITY"
-        android:textColor="#000000"
-        android:textSize="32sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/mstclogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/info_AboutUs"
-        android:layout_alignBottom="@id/info_AboutUs"
-        android:layout_alignParentRight="true"
-        android:padding="3dp"
-        app:srcCompat="@drawable/ic_stclogo" />
 
     <Button
         android:id="@+id/button_instagram"
@@ -98,7 +48,7 @@
         android:layout_below="@id/stcImage"
         android:layout_alignLeft="@id/stcImage"
         android:layout_marginLeft="2dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:background="#EBEFF8"
         android:drawableLeft="@drawable/ic_dashicons_instagram"
         android:padding="10dp"
@@ -153,10 +103,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/button_facebook"
                 android:layout_marginStart="70dp"
-                android:background="@drawable/background_tab"
+                android:background="@drawable/btn_rounded"
+                android:backgroundTint="@color/white"
                 app:layout_scrollFlags="noScroll"
                 app:tabGravity="fill"
-                app:tabIndicatorColor="#000000"
+                app:tabIndicatorColor="@color/white"
                 app:tabMode="fixed"
                 app:tabSelectedTextColor="#000000"
                 app:tabTextColor="#666666">

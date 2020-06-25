@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#EBEFF8"
+    android:elevation="0dp"
     android:orientation="horizontal"
     android:padding="5dp">
 
@@ -14,8 +15,8 @@
         android:layout_marginBottom="20dp"
         android:padding="10dp"
         app:cardCornerRadius="12dp"
-        app:cardElevation="0sp"
-        app:cardMaxElevation="0sp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="5dp">
 
@@ -24,6 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
+            android:elevation="0dp"
             android:orientation="vertical">
 
             <TextView

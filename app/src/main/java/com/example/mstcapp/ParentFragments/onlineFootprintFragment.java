@@ -72,7 +72,7 @@ public class onlineFootprintFragment extends Fragment {
         onlineFootprintPagerAdapter adapter=new onlineFootprintPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new eventsFragments(),"Events");
         adapter.addFragment(new projectFragment(),"Projects");
-        adapter.addFragment(new githubFragment(),"Github Project");
+        adapter.addFragment(new githubFragment(),"Github");
 
         //ADAPTER SETUP
         viewPager2.setAdapter(adapter);

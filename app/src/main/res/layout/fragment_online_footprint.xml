@@ -5,37 +5,10 @@
     android:layout_height="match_parent"
     android:background="#EBEFF8">
 
-    <TextView
-        android:id="@+id/onlineTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="50px"
-        android:layout_marginTop="68px"
-        android:backgroundTint="#EBEFF8"
-        android:fontFamily="@font/montserrat_medium"
-        android:padding="10sp"
-        android:text="HIGHLIGHTS"
-        android:textColor="#000000"
-        android:textSize="28sp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/mstclogo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@id/onlineTV"
-        android:layout_alignBottom="@id/onlineTV"
-        android:layout_alignParentRight="true"
-        android:padding="3dp"
-        app:srcCompat="@drawable/ic_stclogo" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/onlineTV"
-        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -52,7 +25,7 @@
                 app:tabGravity="fill"
                 app:tabIndicatorColor=" #332CAB"
                 app:tabMode="fixed"
-                app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:tabTextAppearance="@style/MyCustomTabText"
                 app:tabTextColor="#727272">
 
                 <com.google.android.material.tabs.TabItem

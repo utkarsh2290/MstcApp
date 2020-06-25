@@ -4,12 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#332CAB"
+    android:visibility="visible"
     tools:context=".LoginActivity">
 
     <ImageView
         android:id="@+id/logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="125dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
         app:srcCompat="@drawable/ic_stclogo" />
@@ -19,43 +21,58 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/logo"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="20dp"
         android:fontFamily="@font/montserrat_medium"
+        android:padding="8dp"
         android:text="Login into your account"
-        android:textColor="#000000"
-        android:textSize="18sp" />
+        android:textColor="#ffffff"
+        android:textSize="24dp" />
 
     <EditText
         android:id="@+id/loginEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView2"
         android:layout_alignLeft="@id/textView2"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="50dp"
         android:layout_marginBottom="10dp"
-        android:background="#EBEFF8"
+        android:alpha="0.75"
+        android:backgroundTint="#EBEFF8"
         android:ems="10"
         android:fontFamily="@font/montserrat_medium"
+        android:gravity="start"
         android:hint="Enter your Email"
         android:inputType="textEmailAddress"
-        android:padding="15dp" />
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:textColorHint=" #E5E5E5"
+        android:textCursorDrawable="@color/white"
+        android:textSize="16dp" />
 
     <EditText
         android:id="@+id/loginPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginEmail"
         android:layout_alignLeft="@id/loginEmail"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="50dp"
         android:layout_marginBottom="10dp"
-        android:background="#EBEFF8"
+        android:alpha="0.8"
+        android:backgroundTint="#EBEFF8"
         android:ems="10"
         android:fontFamily="@font/montserrat_medium"
+        android:gravity="start"
         android:hint="Enter your Password"
         android:inputType="textPassword"
-        android:padding="15dp" />
+        android:padding="8dp"
+        android:textColor="@android:color/white"
+        android:textColorHint=" #E5E5E5"
+        android:textCursorDrawable="@color/white"
+        android:textSize="16dp" />
 
     <Button
         android:id="@+id/forgotPassword"
@@ -64,24 +81,29 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/loginPassword"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="80dp"
-        android:background="@color/white"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="50dp"
+        android:alpha="0.5"
+        android:background="#332CAB"
         android:fontFamily="@font/montserrat_medium"
-        android:text="Forgot Password?" />
+        android:gravity="top"
+        android:text="Forgot Password?"
+        android:textColor="@color/white"
+        android:textSize="12dp" />
 
     <Button
         android:id="@+id/btn_Login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/forgotPassword"
+        android:layout_alignLeft="@id/textView2"
+        android:layout_alignRight="@id/loginEmail"
         android:layout_centerHorizontal="false"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="60dp"
-        android:background="@drawable/background_tab"
-        android:backgroundTint="#332CAB"
+        android:background="@drawable/btn_rounded"
+        android:backgroundTint="@color/white"
         android:fontFamily="@font/montserrat_medium"
         android:text="Login"
-        android:textColor="#FFFFFF" />
+        android:textColor="#332CAB"
+        android:textSize="16dp" />
 </RelativeLayout>
