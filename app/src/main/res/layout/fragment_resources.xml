@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/res_frag"
-    android:padding="10dp">
+    android:padding="8dp">
 
     <TextView
         android:id="@+id/respage_header"
@@ -14,7 +14,8 @@
         android:fontFamily="@font/montserrat"
         android:text="Select a domain"
         android:textColor="#000000"
-        android:textSize="24dp" />
+        android:textSize="24dp"
+        android:layout_marginLeft="8dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

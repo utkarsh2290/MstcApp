@@ -11,9 +11,12 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.ViewPager;
 
 import com.example.mstcapp.R;
 import com.example.mstcapp.adapters.ResourcesAdapter;
+import com.google.android.material.appbar.AppBarLayout;
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +25,10 @@ public class resourcesFragment extends Fragment {
 
     RecyclerView recyclerView;  //views on the layout
     TextView tv;
+    private TabLayout tabLayout;
+    private AppBarLayout appBarLayout;
+    private ViewPager viewPager;
+    private TextView resappbar_title;
 
     List<String> domains= new ArrayList<>(); //list for recycler view
     List<Integer> domain_backgroundId=new ArrayList<>();
@@ -38,6 +45,7 @@ public class resourcesFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //below code for resources menu
         //Domains title
         domains.add("Android");
         domains.add("Flutter");

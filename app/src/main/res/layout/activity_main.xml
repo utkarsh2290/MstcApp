@@ -9,6 +9,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:id="@+id/appbar_layout">
 
         <RelativeLayout
@@ -16,15 +17,16 @@
             android:layout_height="96dp"
             android:padding="16dp"
             android:background="@color/white">
+
             <TextView
+                android:id="@+id/appbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SAMPLE"
                 android:layout_centerVertical="true"
-                android:textSize="28dp"
-                android:textColor="@color/black"
                 android:fontFamily="@font/montserrat"
-                android:id="@+id/appbar_title"/>
+                android:text="SAMPLE"
+                android:textColor="@color/black"
+                android:textSize="28dp" />
 
             <ImageView
                 android:layout_width="wrap_content"
@@ -43,8 +45,11 @@
         android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_above="@+id/navigation_bottom"
         android:layout_below="@+id/appbar_layout"
-        android:layout_above="@+id/navigation_bottom" />
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="-3dp"
+        android:layout_marginBottom="3dp" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bottom"

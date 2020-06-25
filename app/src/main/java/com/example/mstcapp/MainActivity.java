@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -47,6 +48,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
@@ -76,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
                         case R.id.nav_info:
                             appbar_title.setText("INFORMATION");
-                            item.setIcon(R.drawable.ic_profile1);
+                            item.setIcon(R.drawable.ic_info);
                             selectedFragment = new aboutUsFragment();
                             break;
                     }
