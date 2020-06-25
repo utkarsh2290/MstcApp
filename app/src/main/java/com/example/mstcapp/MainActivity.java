@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    //navbar for non mstc users
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
