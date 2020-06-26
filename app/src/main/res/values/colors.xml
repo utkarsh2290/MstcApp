@@ -5,9 +5,9 @@
     <color name="background_color">#EBEFF8</color>
     <color name="colorPrimaryDark">#332CAB</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="tabChecked">#E9E9E9</color>
     <color name="black">#000000</color>
     <color name="gray">#545454</color>
     <color name="link_blue">#0645AD</color>
+    <color name="tab_unchecked"> #E9E9E9</color>
 </resources>
 

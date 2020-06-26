@@ -40,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
         stc_logo=findViewById(R.id.stclogo_appbar);
 
+        firebaseAuth=FirebaseAuth.getInstance();
+
+        if(firebaseAuth.getCurrentUser()!=null){
+
+        }
 
         //IF NO BUTTON IS SELECTED, FEED WILL BE SHOWN
         // for the nav bar to have filled icon at the start

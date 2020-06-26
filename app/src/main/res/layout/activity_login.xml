@@ -32,7 +32,7 @@
 
     <EditText
         android:id="@+id/loginEmail"
-        android:layout_width="match_parent"
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/textView2"
         android:layout_alignLeft="@id/textView2"
@@ -54,7 +54,7 @@
 
     <EditText
         android:id="@+id/loginPassword"
-        android:layout_width="match_parent"
+        android:layout_width="304dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/loginEmail"
         android:layout_alignLeft="@id/loginEmail"
@@ -77,8 +77,8 @@
     <Button
         android:id="@+id/forgotPassword"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="148dp"
+        android:layout_height="22dp"
         android:layout_below="@id/loginPassword"
         android:layout_alignParentRight="true"
         android:layout_marginTop="0dp"
@@ -99,7 +99,7 @@
         android:layout_alignLeft="@id/textView2"
         android:layout_alignRight="@id/loginEmail"
         android:layout_centerHorizontal="false"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/btn_rounded"
         android:backgroundTint="@color/white"
         android:fontFamily="@font/montserrat_medium"
