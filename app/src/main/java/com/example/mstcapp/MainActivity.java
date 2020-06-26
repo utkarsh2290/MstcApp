@@ -8,6 +8,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Button;
 
@@ -26,10 +28,9 @@ public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     TextView appbar_title;
     AppBarLayout appBarLayout_main;
-
-    private Button login,logout;
+    ImageButton stc_logo;
     FirebaseAuth firebaseAuth;
-    public int x=1;
+    public static int check=0;
 
 
     @Override
@@ -37,11 +38,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        stc_logo=findViewById(R.id.stclogo_appbar);
         appBarLayout_main=findViewById(R.id.appbar_layout);
         appbar_title=findViewById(R.id.appbar_title);
         bottomNavigationView = findViewById(R.id.navigation_bottom);
-        if(x==1){
+
+        firebaseAuth=FirebaseAuth.getInstance();
+        if(firebaseAuth.getCurrentUser()!=null){
             bottomNavigationView.inflateMenu(R.menu.bottom_navbar_five);
+            check=1;
         }
         else
         {
@@ -59,6 +64,13 @@ public class MainActivity extends AppCompatActivity {
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                     new feedFragment()).commit();
         }
+        stc_logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),profileActivity.class));
+                finish();
+            }
+        });
     }
 
 
@@ -73,6 +85,10 @@ public class MainActivity extends AppCompatActivity {
                     menu.findItem(R.id.nav_resources).setIcon(R.drawable.ic_resources__unfilled);
                     menu.findItem(R.id.nav_archive).setIcon(R.drawable.ic_highlights_unfilled);
                     menu.findItem(R.id.nav_info).setIcon(R.drawable.ic_info_unfilled);
+                    if(check==1){
+                        menu.findItem(R.id.nav_exclusive).setIcon(R.drawable.ic_mstc_exclusive_unfilled);
+                    }
+
 
                     Fragment selectedFragment = null;
                     switch (item.getItemId()) {
@@ -89,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.nav_archive:
                             item.setIcon(R.drawable.ic_highlights);
                             appbar_title.setText("HIGHLIGHTS");
+                            appBarLayout_main.setElevation(0);
                             selectedFragment = new onlineFootprintFragment();
                             break;
                         case R.id.nav_exclusive:

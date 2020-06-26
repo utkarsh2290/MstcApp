@@ -17,12 +17,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.ViewPager;
 
-
+import com.example.mstcapp.adapters.aboutPagerAdapter;
 import com.example.mstcapp.R;
 import com.example.mstcapp.aboutFragment.boardFragment;
 import com.example.mstcapp.aboutFragment.infoFragment;
-
-import com.example.mstcapp.adapters.aboutPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class aboutUsFragment extends Fragment {

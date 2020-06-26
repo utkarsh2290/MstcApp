@@ -4,22 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="#EBEFF8"
-    android:elevation="0sp"
+    android:elevation="0dp"
     android:orientation="horizontal"
-    android:padding="5dp">
+    android:padding="4dp">
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:padding="8dp"
         app:cardCornerRadius="12dp"
-        app:cardElevation="0sp"
-        app:cardMaxElevation="0sp"
+        app:cardElevation="0dp"
+        app:cardMaxElevation="0dp"
         app:cardUseCompatPadding="true"
-        app:contentPadding="5dp">
+        app:contentPadding="4dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -35,8 +35,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_medium"
-                android:hint="Name of Project"
-                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="Name of Project"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <TextView
@@ -46,8 +47,9 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/montserrat_medium"
                 android:gravity="start"
-                android:hint="Short Description"
-                android:textSize="16sp" />
+                android:text="Short Description"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_contributors_proj"
@@ -56,8 +58,9 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/montserrat_medium"
                 android:gravity="start"
-                android:hint="Contributors"
-                android:textSize="16sp" />
+                android:text="Contributors"
+                android:textColor="@color/black"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/tv_mediumLink_proj"
@@ -66,8 +69,9 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/montserrat_medium"
                 android:gravity="start"
-                android:hint="Link to Medium"
-                android:textSize="16sp" />
+                android:textColor="@color/black"
+                android:text="Link to Medium"
+                android:textSize="16dp" />
 
         </LinearLayout>
 

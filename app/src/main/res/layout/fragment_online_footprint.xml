@@ -2,19 +2,13 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-
     android:layout_height="match_parent"
     android:background="#EBEFF8">
-
-
-
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
         android:orientation="vertical">
 
         <com.google.android.material.appbar.AppBarLayout
@@ -31,7 +25,7 @@
                 app:tabGravity="fill"
                 app:tabIndicatorColor=" #332CAB"
                 app:tabMode="fixed"
-                app:tabTextAppearance="@style/TextAppearance.AppCompat.Medium"
+                app:tabTextAppearance="@style/tab_font"
                 app:tabTextColor="#727272">
 
                 <com.google.android.material.tabs.TabItem

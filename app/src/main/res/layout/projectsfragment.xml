@@ -3,10 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp">
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/projects_recycler1"
@@ -14,7 +11,7 @@
             android:layout_height="wrap_content">
 
         </androidx.recyclerview.widget.RecyclerView>
-    </androidx.cardview.widget.CardView>
+
 
 
 </RelativeLayout>

@@ -49,7 +49,7 @@
         app:tabGravity="fill"
         app:tabIndicatorColor="@color/colorPrimary"
         app:tabTextAppearance="@style/tab_font"
-        app:tabTextColor="@color/black"
+        app:tabTextColor="@color/tabFont"
         app:tabMode="fixed"/>
 
     <androidx.viewpager.widget.ViewPager

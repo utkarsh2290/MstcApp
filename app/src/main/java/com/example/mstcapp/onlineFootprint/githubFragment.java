@@ -11,9 +11,10 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-import com.example.mstcapp.R;
+import com.example.mstcapp.adapters.eventFragmentAdapter;
 import com.example.mstcapp.adapters.githubFragmentAdapter;
+import com.example.mstcapp.adapters.projectRecyclerAdapter;
+import com.example.mstcapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

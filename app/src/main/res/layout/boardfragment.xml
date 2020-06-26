@@ -4,277 +4,329 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="30dp"
-    android:background="@color/white"
-    android:padding="10dp">
+    android:layout_margin="8dp"
+    android:background="@color/background_color"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:padding="4dp">
+
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cViewPresident"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp">
+            app:cardCornerRadius="12dp"
+            app:contentPadding="5dp">
+
 
             <RelativeLayout
+                android:id="@+id/rPresident"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/photoPresident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="false"
+                    android:layout_margin="5dp"
+                    android:background="#332CAB"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_stclogo" />
+
+                <TextView
+                    android:id="@+id/namePresident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/photoPresident"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="NAME"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/postPresident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/namePresident"
+                    android:layout_alignLeft="@id/namePresident"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="PRESIDENT"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/domainPresident"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/postPresident"
+                    android:layout_alignLeft="@id/postPresident"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cViewProjectLead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cViewPresident"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="5dp">
+
+            <RelativeLayout
+                android:id="@+id/rProjectLead"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
 
-                <RelativeLayout
-                    android:id="@+id/rPresident"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp">
-
-                    <ImageView
-                        android:id="@+id/photoPresident"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#332CAB"
-                        android:padding="5dp"
-                        app:srcCompat="@drawable/ic_stclogo" />
-
-                    <TextView
-                        android:id="@+id/namePresident"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_toRightOf="@id/photoPresident"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="NAME"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/postPresident"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/namePresident"
-                        android:layout_alignLeft="@id/namePresident"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="PRESIDENT"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/domainPresident"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/postPresident"
-                        android:layout_alignLeft="@id/postPresident"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="DOMAIN"
-                        android:textSize="16sp" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rProjectLead"
+                <ImageView
+                    android:id="@+id/photoProLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rPresident"
-                    android:layout_marginBottom="20dp">
+                    android:background="#332CAB"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_stclogo" />
 
-                    <ImageView
-                        android:id="@+id/photoProLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#332CAB"
-                        android:padding="5dp"
-                        app:srcCompat="@drawable/ic_stclogo" />
-
-                    <TextView
-                        android:id="@+id/nameProLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_toRightOf="@id/photoProLead"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="NAME"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/postProLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nameProLead"
-                        android:layout_alignLeft="@id/nameProLead"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="PROJECT LEAD"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/domainProLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/postProLead"
-                        android:layout_alignLeft="@id/nameProLead"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="DOMAIN"
-                        android:textSize="16sp" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/rTechMentor"
+                <TextView
+                    android:id="@+id/nameProLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rProjectLead"
-                    android:layout_marginBottom="20dp">
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/photoProLead"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="NAME"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                    <ImageView
-                        android:id="@+id/photoTechMentor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#332CAB"
-                        android:padding="5dp"
-                        app:srcCompat="@drawable/ic_stclogo" />
-
-                    <TextView
-                        android:id="@+id/nameTechMentor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_toRightOf="@id/photoTechMentor"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="NAME"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/postTechMentor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nameTechMentor"
-                        android:layout_alignLeft="@id/nameTechMentor"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="TECH MENTOR"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/domainTechMentor"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/postTechMentor"
-                        android:layout_alignLeft="@id/nameTechMentor"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="DOMAIN"
-                        android:textSize="16sp" />
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/rManageLead"
+                <TextView
+                    android:id="@+id/postProLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rTechMentor"
-                    android:layout_marginBottom="20dp">
+                    android:layout_below="@id/nameProLead"
+                    android:layout_alignLeft="@id/nameProLead"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="PROJECT LEAD"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
-                    <ImageView
-                        android:id="@+id/photoManageLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#332CAB"
-                        android:padding="5dp"
-                        app:srcCompat="@drawable/ic_stclogo" />
-
-                    <TextView
-                        android:id="@+id/nameManageLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_toRightOf="@id/photoManageLead"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="NAME"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/postManageLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nameManageLead"
-                        android:layout_alignLeft="@id/nameManageLead"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="MANAGEMENT LEAD"
-                        android:textSize="16sp" />
-
-                    <TextView
-                        android:id="@+id/domainManageLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/postManageLead"
-                        android:layout_alignLeft="@id/nameManageLead"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="DOMAIN"
-                        android:textSize="16sp" />
-
-                </RelativeLayout>
-
-
-                <RelativeLayout
-                    android:id="@+id/rFinanceLead"
+                <TextView
+                    android:id="@+id/domainProLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/rManageLead">
+                    android:layout_below="@id/postProLead"
+                    android:layout_alignLeft="@id/nameProLead"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
 
-                    <ImageView
-                        android:id="@+id/photoFinanceLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="#332CAB"
-                        android:padding="5dp"
-                        app:srcCompat="@drawable/ic_stclogo" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cViewTechMentor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cViewProjectLead"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="5dp">
 
-                    <TextView
-                        android:id="@+id/nameFinanceLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_toRightOf="@id/photoFinanceLead"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="NAME"
-                        android:textSize="20sp"
-                        android:textStyle="bold" />
+            <RelativeLayout
+                android:id="@+id/rTechMentor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/postFinanceLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/nameFinanceLead"
-                        android:layout_alignLeft="@id/nameFinanceLead"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="FINANCE LEAD"
-                        android:textSize="16sp" />
+                <ImageView
+                    android:id="@+id/photoTechMentor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#332CAB"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_stclogo" />
 
-                    <TextView
-                        android:id="@+id/domainFinanceLead"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/postFinanceLead"
-                        android:layout_alignLeft="@id/nameFinanceLead"
-                        android:layout_marginTop="7dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:hint="DOMAIN"
-                        android:textSize="16sp" />
+                <TextView
+                    android:id="@+id/nameTechMentor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/photoTechMentor"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="NAME"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                </RelativeLayout>
+                <TextView
+                    android:id="@+id/postTechMentor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameTechMentor"
+                    android:layout_alignLeft="@id/nameTechMentor"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="TECH MENTOR"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/domainTechMentor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/postTechMentor"
+                    android:layout_alignLeft="@id/nameTechMentor"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cViewManageLead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cViewTechMentor"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="5dp">
+
+            <RelativeLayout
+                android:id="@+id/rManageLead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/photoManageLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#332CAB"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_stclogo" />
+
+                <TextView
+                    android:id="@+id/nameManageLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/photoManageLead"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="NAME"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/postManageLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameManageLead"
+                    android:layout_alignLeft="@id/nameManageLead"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="MANAGEMENT LEAD"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/domainManageLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/postManageLead"
+                    android:layout_alignLeft="@id/nameManageLead"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cViewFinanceLead"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cViewManageLead"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="12dp"
+            app:contentPadding="5dp">
+
+            <RelativeLayout
+                android:id="@+id/rFinanceLead"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/photoFinanceLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#332CAB"
+                    android:padding="5dp"
+                    app:srcCompat="@drawable/ic_stclogo" />
+
+                <TextView
+                    android:id="@+id/nameFinanceLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@id/photoFinanceLead"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="NAME"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/postFinanceLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/nameFinanceLead"
+                    android:layout_alignLeft="@id/nameFinanceLead"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="FINANCE LEAD"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/domainFinanceLead"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/postFinanceLead"
+                    android:layout_alignLeft="@id/nameFinanceLead"
+                    android:layout_marginTop="7dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
+                    android:textSize="16sp" />
 
             </RelativeLayout>
 
-
         </androidx.cardview.widget.CardView>
 
+    </RelativeLayout>
 
 
 </ScrollView>

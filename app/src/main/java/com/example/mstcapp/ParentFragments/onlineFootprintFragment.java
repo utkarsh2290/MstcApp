@@ -10,10 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-
-import com.example.mstcapp.R;
-
 import com.example.mstcapp.adapters.onlineFootprintPagerAdapter;
+import com.example.mstcapp.R;
 import com.example.mstcapp.onlineFootprint.eventsFragments;
 import com.example.mstcapp.onlineFootprint.githubFragment;
 import com.example.mstcapp.onlineFootprint.projectFragment;
@@ -74,7 +72,7 @@ public class onlineFootprintFragment extends Fragment {
         onlineFootprintPagerAdapter adapter=new onlineFootprintPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new eventsFragments(),"Events");
         adapter.addFragment(new projectFragment(),"Projects");
-        adapter.addFragment(new githubFragment(),"Github Project");
+        adapter.addFragment(new githubFragment(),"Github");
 
         //ADAPTER SETUP
         viewPager2.setAdapter(adapter);

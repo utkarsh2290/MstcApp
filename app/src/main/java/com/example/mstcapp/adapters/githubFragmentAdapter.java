@@ -27,7 +27,7 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
 
     @NonNull
     @Override
-    public githubFragmentAdapter.myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v2;
         v2= LayoutInflater.from(mContext2).inflate(R.layout.items_github_proj, parent, false);
         myViewHolder vHolder2 = new myViewHolder(v2);
@@ -37,7 +37,7 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
 
 
     @Override
-    public void onBindViewHolder(@NonNull githubFragmentAdapter.myViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.githubProj_link.setText(mData2.get(position).getTitleGithubProj());
         holder.githubProj_title.setText(mData2.get(position).getLinkGithubProj());
     }
