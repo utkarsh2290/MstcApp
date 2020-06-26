@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:layout_margin="8dp"
     android:background="@color/background_color"
-    android:padding="10dp">
+    android:padding="8dp">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:padding="10dp">
+        android:layout_margin="8dp"
+        android:padding="4dp">
 
 
         <androidx.cardview.widget.CardView
@@ -46,7 +46,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/photoPresident"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="NAME"
+                    android:text="NAME"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -58,7 +59,8 @@
                     android:layout_alignLeft="@id/namePresident"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="PRESIDENT"
+                    android:text="PRESIDENT"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -69,7 +71,8 @@
                     android:layout_alignLeft="@id/postPresident"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="DOMAIN"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -105,7 +108,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/photoProLead"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="NAME"
+                    android:text="NAME"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -117,7 +121,8 @@
                     android:layout_alignLeft="@id/nameProLead"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="PROJECT LEAD"
+                    android:text="PROJECT LEAD"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -128,7 +133,8 @@
                     android:layout_alignLeft="@id/nameProLead"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="DOMAIN"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -163,7 +169,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/photoTechMentor"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="NAME"
+                    android:text="NAME"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -175,7 +182,8 @@
                     android:layout_alignLeft="@id/nameTechMentor"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="TECH MENTOR"
+                    android:text="TECH MENTOR"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -186,7 +194,8 @@
                     android:layout_alignLeft="@id/nameTechMentor"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="DOMAIN"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -222,7 +231,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/photoManageLead"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="NAME"
+                    android:text="NAME"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -234,7 +244,8 @@
                     android:layout_alignLeft="@id/nameManageLead"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="MANAGEMENT LEAD"
+                    android:text="MANAGEMENT LEAD"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -245,7 +256,8 @@
                     android:layout_alignLeft="@id/nameManageLead"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="DOMAIN"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>
@@ -281,7 +293,8 @@
                     android:layout_marginTop="10dp"
                     android:layout_toRightOf="@id/photoFinanceLead"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="NAME"
+                    android:text="NAME"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -293,7 +306,8 @@
                     android:layout_alignLeft="@id/nameFinanceLead"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="FINANCE LEAD"
+                    android:text="FINANCE LEAD"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
                 <TextView
@@ -304,7 +318,8 @@
                     android:layout_alignLeft="@id/nameFinanceLead"
                     android:layout_marginTop="7dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:hint="DOMAIN"
+                    android:text="DOMAIN"
+                    android:textColor="@color/black"
                     android:textSize="16sp" />
 
             </RelativeLayout>

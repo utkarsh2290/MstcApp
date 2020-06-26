@@ -104,8 +104,6 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/button_facebook"
                 android:layout_marginStart="70dp"
-                android:background="@drawable/btn_rounded"
-                android:backgroundTint="@color/white"
                 app:layout_scrollFlags="noScroll"
                 app:tabBackground="@drawable/tab_background"
                 app:tabGravity="fill"
