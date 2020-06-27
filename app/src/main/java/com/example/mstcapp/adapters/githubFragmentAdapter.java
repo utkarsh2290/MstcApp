@@ -1,6 +1,8 @@
 package com.example.mstcapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,9 +39,18 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
 
 
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
-        holder.githubProj_link.setText(mData2.get(position).getTitleGithubProj());
-        holder.githubProj_title.setText(mData2.get(position).getLinkGithubProj());
+    public void onBindViewHolder(@NonNull myViewHolder holder, final int position) {
+        holder.githubProj_link.setText(mData2.get(position).getLinkGithubProj());
+        holder.githubProj_title.setText(mData2.get(position).getTitleGithubProj());
+        holder.githubProj_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link=mData2.get(position).getLinkGithubProj();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse(link)));
+                mContext2.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -52,10 +52,10 @@ public class feedFragment extends Fragment {
         Title_sample.add("Did You Know");
         Title_sample.add("Did You Know");
 
-        Link_sample.add("Link : "+"instagram.com/p/B8q8TzYhlv8/");
-        Link_sample.add("Link : "+"instagram.com/p/B8q8TzYhlv8/");
-        Link_sample.add("Link : "+"instagram.com/p/B8q8TzYhlv8/");
-        Link_sample.add("Link : "+"instagram.com/p/B8q8TzYhlv8/");
+        Link_sample.add("https://www.instagram.com/mstcvit/");
+        Link_sample.add("https://www.instagram.com/mstcvit/");
+        Link_sample.add("https://www.instagram.com/mstcvit/");
+        Link_sample.add( "https://www.instagram.com/mstcvit/");
 
         recyclerView_feed=(RecyclerView)getView().findViewById(R.id.recyclerview_feed);
 
@@ -63,7 +63,7 @@ public class feedFragment extends Fragment {
         //layout for recycler view to have feed images or something
 
         recyclerView_feed.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView_feed.setAdapter(new FeedAdapter(URLS_sample,Desc_sample,Title_sample,Link_sample));
+        recyclerView_feed.setAdapter(new FeedAdapter(URLS_sample,Desc_sample,Title_sample,Link_sample,getContext()));
 
 
 

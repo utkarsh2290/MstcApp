@@ -19,6 +19,8 @@ import java.util.List;
 
 public class fragmentUpdates extends Fragment {
     List<String> updates_titles=new ArrayList<>();
+    List<String> updates_content=new ArrayList<>();
+
     RecyclerView recyclerView_updates;
     @Nullable
     @Override
@@ -33,8 +35,11 @@ public class fragmentUpdates extends Fragment {
         updates_titles.add("Update for the day");
         updates_titles.add("Update for the day");
 
+        updates_content.add("Meeting near SMV back side. Arrive at 7:00 pm sharp.");
+        updates_content.add("Meeting near SMV back side. Arrive at 7:00 pm sharp.");
+
         recyclerView_updates.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView_updates.setAdapter(new updatesAdapter(updates_titles));
+        recyclerView_updates.setAdapter(new updatesAdapter(updates_titles,updates_content));
 
     }
 

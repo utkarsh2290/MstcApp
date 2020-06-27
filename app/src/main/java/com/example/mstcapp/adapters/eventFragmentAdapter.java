@@ -1,6 +1,8 @@
 package com.example.mstcapp.adapters;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,12 +37,21 @@ public class eventFragmentAdapter extends RecyclerView.Adapter<eventFragmentAdap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull myViewHolder holder, final int position) {
 
         holder.tv_header.setText(mData.get(position).getHeader());
         holder.tv_descrip.setText(mData.get(position).getDescription());
         holder.image_event.setImageResource(mData.get(position).getPhoto());
         holder.tv_instaLink_event.setText(mData.get(position).getEvent_Insta_Link());
+        holder.tv_instaLink_event.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link=mData.get(position).getEvent_Insta_Link();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse(link)));
+                mContext.startActivity(intent);
+            }
+        });
 
     }
 

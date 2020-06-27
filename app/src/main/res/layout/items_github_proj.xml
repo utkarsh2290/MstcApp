@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#EBEFF8"
-    android:elevation="0dp"
-    android:orientation="horizontal"
-    android:padding="4dp">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp"
+    app:contentPadding="4dp"
+    app:cardUseCompatPadding="true"
+    android:padding="8dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="4dp"
-        android:layout_marginBottom="4dp"
-        android:padding="8dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="0dp"
-        app:cardMaxElevation="0dp"
-        app:cardUseCompatPadding="true"
-        app:contentPadding="4dp">
 
-        <LinearLayout
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:elevation="0dp"
-            android:orientation="vertical">
+            android:padding="8dp">
 
             <TextView
                 android:id="@+id/tv_github_title"
@@ -35,20 +24,18 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:text="Name of Project"
                 android:textSize="20dp"
-                android:textColor="@color/black"
-                android:textStyle="bold" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/tv_repo_link"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:fontFamily="@font/montserrat_medium"
-                android:textColor="@color/black"
-                android:gravity="start"
+                android:layout_below="@+id/tv_github_title"
+                android:fontFamily="@font/montserrat"
+                android:textColor="@color/link_blue"
+                android:layout_marginTop="4dp"
                 android:text="Repo Link"
                 android:textSize="16dp" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+        </RelativeLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

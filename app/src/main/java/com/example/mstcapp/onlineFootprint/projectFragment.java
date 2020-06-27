@@ -87,7 +87,7 @@ public class projectFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         projectsList=new ArrayList<>();
-        projectsList.add(new projectFragment("Mstc App","Our App","ABCD","https://medium.com/student-technical-community-vit-vellore"));
-        projectsList.add(new projectFragment("Notes Segragation","Another App","WXYZ","https://medium.com/student-technical-community-vit-vellore"));
+        projectsList.add(new projectFragment("Mstc App","Our App is one of a kind app. Head out to playstore to and download it","Utkarsh ,Prateek ,Niharika, Prajesh","https://medium.com/student-technical-community-vit-vellore"));
+        projectsList.add(new projectFragment("Notes Segragation","Our App is one of a kind app. Head out to playstore to and download it","Utkarsh ,Prateek ,Niharika, Prajesh","https://medium.com/student-technical-community-vit-vellore"));
     }
 }

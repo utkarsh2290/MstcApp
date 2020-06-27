@@ -32,6 +32,16 @@
             android:text="Title"
             android:textColor="@color/black"
             android:textSize="24dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/attendance_image"
+            android:layout_marginTop="8dp"
+            android:id="@+id/attendance_content"
+            android:fontFamily="@font/montserrat"
+            android:textSize="16dp"
+            android:text="Sample"
+            android:textColor="@color/black"/>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

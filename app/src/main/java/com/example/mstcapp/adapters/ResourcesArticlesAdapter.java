@@ -1,5 +1,8 @@
 package com.example.mstcapp.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -7,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager.widget.PagerAdapter;
 
 import com.example.mstcapp.R;
 
@@ -17,9 +21,13 @@ import java.util.List;
 public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArticlesAdapter.ResourcesArticleView> {
 
     List<String> res_article_titleList=new ArrayList<>();
+    List<String> res_article_linkList=new ArrayList<>();
+    Context mContext2;
 
-    public ResourcesArticlesAdapter(List<String> res_article_titleList) {
+    public ResourcesArticlesAdapter(List<String> res_article_titleList, List<String> sample_titles_links, Context context) {
         this.res_article_titleList = res_article_titleList;
+        res_article_linkList=sample_titles_links;
+        mContext2=context;
     }
 
     @NonNull
@@ -31,8 +39,19 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ResourcesArticleView holder, int position) {
+    public void onBindViewHolder(@NonNull final ResourcesArticleView holder, final int position) {
         holder.res_article_title.setText(res_article_titleList.get(position));
+        holder.res_article_link.setText(res_article_linkList.get(position));
+        holder.res_article_link.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link=holder.res_article_link.getText().toString();
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse(link)));
+                mContext2.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
@@ -42,10 +61,11 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
 
     public class ResourcesArticleView extends RecyclerView.ViewHolder{
 
-        TextView res_article_title;
+        TextView res_article_title,res_article_link;
         public ResourcesArticleView(@NonNull View itemView) {
             super(itemView);
             res_article_title=itemView.findViewById(R.id.res_article_title);
+            res_article_link=itemView.findViewById(R.id.res_article_link);
         }
     }
 }

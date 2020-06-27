@@ -19,6 +19,7 @@ import java.util.List;
 
 public class articlelinksFragment extends Fragment {
     List <String> sample_titles_article = new ArrayList<>();
+    List <String> sample_titles_links = new ArrayList<>();
     RecyclerView res_article_recyclerview;
 
     @Nullable
@@ -36,9 +37,13 @@ public class articlelinksFragment extends Fragment {
         sample_titles_article.add("Using Shared pref in Andreoid");
         sample_titles_article.add("Another random title goes here");
 
+        sample_titles_links.add("https://medium.com/student-technical-community-vit-vellore");
+        sample_titles_links.add("https://medium.com/student-technical-community-vit-vellore");
+        sample_titles_links.add("https://medium.com/student-technical-community-vit-vellore");
+
         res_article_recyclerview=view.findViewById(R.id.res_article_recyclerview);
         res_article_recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
-        res_article_recyclerview.setAdapter(new ResourcesArticlesAdapter(sample_titles_article));
+        res_article_recyclerview.setAdapter(new ResourcesArticlesAdapter(sample_titles_article,sample_titles_links,getContext()));
     }
 
     @Override

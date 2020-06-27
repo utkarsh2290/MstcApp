@@ -1,5 +1,8 @@
 package com.example.mstcapp.adapters;
 
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,12 +22,14 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     List <String> desc_sample=new ArrayList<>();
     List <String> title_sample=new ArrayList<>();
     List <String> link_sample=new ArrayList<>();
+    Context mContext;
 
-    public FeedAdapter(List<Integer> urls_sample, List<String> desc, List <String> title,List <String> links) {
+    public FeedAdapter(List<Integer> urls_sample, List<String> desc, List <String> title,List <String> links,Context context) {
     samples=urls_sample;
     desc_sample=desc;
     title_sample=title;
     link_sample=links;
+    mContext=context;
     }
 
     @NonNull
@@ -37,12 +42,21 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     //clickable to browser with image
 
     @Override
-    public void onBindViewHolder(@NonNull FeedView holder, int position) {
+    public void onBindViewHolder(@NonNull FeedView holder, final int position) {
         //used to set everything in the feed page
         holder.feed_imageView.setImageResource(samples.get(position));
         holder.desc_textView.setText(desc_sample.get(position));
         holder.title_textView.setText(title_sample.get(position));
         holder.link_textView.setText(link_sample.get(position));
+        holder.link_textView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String link=link_sample.get(position);
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData((Uri.parse(link)));
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override

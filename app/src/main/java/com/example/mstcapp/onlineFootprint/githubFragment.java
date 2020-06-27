@@ -73,5 +73,6 @@ public class githubFragment extends Fragment {
 
         githubProjList=new ArrayList<>();
         githubProjList.add(new githubFragment("Covifight","https://github.com/NavdeepChawla/"));
+        githubProjList.add(new githubFragment("Covifight","https://github.com/NavdeepChawla/"));
     }
 }

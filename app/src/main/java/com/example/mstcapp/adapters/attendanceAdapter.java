@@ -30,7 +30,7 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
 
     @Override
     public void onBindViewHolder(@NonNull attendanceViewholer holder, int position) {
-    holder.attendance_titlle.setText(list_attendance_titles.get(position));
+    holder.attendance_title.setText(list_attendance_titles.get(position));
     }
 
     @Override
@@ -40,10 +40,12 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
 
     public class attendanceViewholer extends RecyclerView.ViewHolder{
 
-        TextView attendance_titlle;
+        TextView attendance_title,attendance_content;
         public attendanceViewholer(@NonNull View itemView) {
             super(itemView);
-            attendance_titlle=itemView.findViewById(R.id.attendance_title);
+            attendance_title=itemView.findViewById(R.id.attendance_title);
+            attendance_content=itemView.findViewById(R.id.attendance_content);
+            attendance_content.setVisibility(View.GONE);
         }
     }
 }

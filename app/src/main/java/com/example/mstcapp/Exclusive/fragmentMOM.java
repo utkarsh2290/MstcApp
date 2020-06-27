@@ -19,6 +19,7 @@ import java.util.List;
 
 public class fragmentMOM extends Fragment {
     List <String> mom_titles=new ArrayList<>();
+    List<String> mom_content=new ArrayList<>();
     RecyclerView recyclerView_mom;
     @Nullable
     @Override
@@ -31,10 +32,19 @@ public class fragmentMOM extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         mom_titles.add("Title for MOM");
         mom_titles.add("Another Title for MOM");
+
+        mom_content.add("Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+                " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when" +
+                " an unknown printer took a galley of type and scrambled it to make a type specimen book.");
+        mom_content.add("Lorem Ipsum is simply dummy text of the printing and typesetting industry." +
+                " Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when" +
+                " an unknown printer took a galley of type and scrambled it to make a type specimen book.");
+
+
         recyclerView_mom=view.findViewById(R.id.mom_recyclerview);
 
         recyclerView_mom.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView_mom.setAdapter(new momRecyclerviewAdapter(mom_titles));
+        recyclerView_mom.setAdapter(new momRecyclerviewAdapter(mom_titles,mom_content));
 
     }
 
