@@ -11,10 +11,10 @@
     <ImageView
         android:id="@+id/logo"
         android:layout_width="150dp"
-        android:layout_height="125dp"
+        android:layout_height="150dp"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        app:srcCompat="@drawable/ic_stclogo" />
+        app:srcCompat="@drawable/stc_white_first" />
 
     <TextView
         android:id="@+id/textView2"

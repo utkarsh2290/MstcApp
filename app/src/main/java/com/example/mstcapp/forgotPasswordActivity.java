@@ -3,6 +3,7 @@ package com.example.mstcapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -11,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -42,29 +44,41 @@ public class forgotPasswordActivity extends AppCompatActivity {
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email=mResetEmail.getText().toString().trim();
-                mAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        final Snackbar snackbar = Snackbar.make(relativeLayout, "Reset Link sent to your email!", Snackbar.LENGTH_INDEFINITE);
-                        snackbar.setAction("Okay", new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                snackbar.dismiss();
-                            }
-                        });
-                        snackbar.setActionTextColor(Color.YELLOW);
-                        snackbar.show();
+                String email = mResetEmail.getText().toString().trim();
+                if(email!=null && !email.isEmpty()) {
+                    mAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @SuppressLint("ResourceAsColor")
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            final Snackbar snackbar = Snackbar.make(relativeLayout, "Reset Link sent to your email!", Snackbar.LENGTH_INDEFINITE);
+                            snackbar.setAction("Okay", new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    snackbar.dismiss();
+                                }
+                            });
+                            snackbar.setActionTextColor(Color.WHITE);
+                            snackbar.show();
 
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                        final Snackbar snackbar = Snackbar.make(relativeLayout, "Unable to send reset link to your email", Snackbar.LENGTH_INDEFINITE);
-                    }
-                });
+                        }
+
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            final Snackbar snackbar = Snackbar.make(relativeLayout, "Unable to send reset link to your email", Snackbar.LENGTH_INDEFINITE);
+                        }
+                    });
+
+                }
+                else{
+                    Toast.makeText(getApplicationContext(),"Email must be entered.",Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
     }
 }
+
+
+
+

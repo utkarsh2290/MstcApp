@@ -33,9 +33,9 @@ public class articlelinksFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        sample_titles_article.add("Article sample : Android 101");
-        sample_titles_article.add("Using Shared pref in Andreoid");
-        sample_titles_article.add("Another random title goes here");
+        sample_titles_article.add("Article sample");
+        sample_titles_article.add("Android 101");
+        sample_titles_article.add("Random Title");
 
         sample_titles_links.add("https://medium.com/student-technical-community-vit-vellore");
         sample_titles_links.add("https://medium.com/student-technical-community-vit-vellore");

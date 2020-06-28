@@ -16,6 +16,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class FirstActivity extends AppCompatActivity {
 
+    public static final String SHARED_PREFS ="sharedprefs";
 
     private Button btn_nonStc,btn_Stc_member;
     Boolean check=false;
@@ -36,6 +37,12 @@ public class FirstActivity extends AppCompatActivity {
             finish();
         }
 
+        SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+        final SharedPreferences.Editor editor=sharedPreferences.edit();
+        if(sharedPreferences.getBoolean(SHARED_PREFS,false)==true){
+            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            finish();
+        }
 
         //INITIALIZING VIEWS
         btn_nonStc=findViewById(R.id.nonStcMember);
@@ -50,13 +57,13 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FirstActivity.this,LoginActivity.class));
-                finish();
             }
         });
 
         btn_nonStc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                editor.putBoolean(SHARED_PREFS,true).apply();
                 startActivity(new Intent(FirstActivity.this,MainActivity.class));
                 finish();
             }

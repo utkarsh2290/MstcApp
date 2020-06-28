@@ -23,6 +23,8 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
     List<String> res_article_titleList=new ArrayList<>();
     List<String> res_article_linkList=new ArrayList<>();
     Context mContext2;
+    public static int mExpandedPosition=-1;
+    public static int previousExpandedPosition=-1;
 
     public ResourcesArticlesAdapter(List<String> res_article_titleList, List<String> sample_titles_links, Context context) {
         this.res_article_titleList = res_article_titleList;
@@ -42,6 +44,22 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
     public void onBindViewHolder(@NonNull final ResourcesArticleView holder, final int position) {
         holder.res_article_title.setText(res_article_titleList.get(position));
         holder.res_article_link.setText(res_article_linkList.get(position));
+        final boolean isExpanded = position==mExpandedPosition;
+        holder.res_article_link.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.itemView.setActivated(isExpanded);
+        if (isExpanded)
+            previousExpandedPosition = position;
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mExpandedPosition = isExpanded ? -1:position;
+                notifyItemChanged(previousExpandedPosition);
+                notifyItemChanged(position);
+
+            }
+        });
+
         holder.res_article_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +69,7 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
                 mContext2.startActivity(intent);
             }
         });
+
 
     }
 
@@ -66,6 +85,8 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
             super(itemView);
             res_article_title=itemView.findViewById(R.id.res_article_title);
             res_article_link=itemView.findViewById(R.id.res_article_link);
+            res_article_link.setVisibility(View.GONE);
+
         }
     }
 }

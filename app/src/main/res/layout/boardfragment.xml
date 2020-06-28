@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="8dp"
-    android:background="@color/background_color"
-    android:padding="8dp">
+    android:background="@color/background_color">
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:padding="4dp">
+        android:padding="16dp">
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cViewPresident"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="12dp"
-            app:contentPadding="5dp">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true"
+            android:id="@+id/cViewPresident">
 
 
             <RelativeLayout
@@ -80,12 +80,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cViewProjectLead"
+            android:layout_below="@id/cViewPresident"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cViewPresident"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="12dp"
-            app:contentPadding="5dp">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true"
+            >
 
             <RelativeLayout
                 android:id="@+id/rProjectLead"
@@ -98,6 +101,7 @@
                     android:layout_height="wrap_content"
                     android:background="#332CAB"
                     android:padding="5dp"
+                    android:layout_margin="5dp"
                     app:srcCompat="@drawable/ic_stclogo" />
 
                 <TextView
@@ -141,12 +145,15 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cViewTechMentor"
+            android:layout_below="@id/cViewProjectLead"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cViewProjectLead"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="12dp"
-            app:contentPadding="5dp">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true"
+            >
 
             <RelativeLayout
                 android:id="@+id/rTechMentor"
@@ -159,6 +166,7 @@
                     android:layout_height="wrap_content"
                     android:background="#332CAB"
                     android:padding="5dp"
+                    android:layout_margin="5dp"
                     app:srcCompat="@drawable/ic_stclogo" />
 
                 <TextView
@@ -203,12 +211,14 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cViewManageLead"
+            android:layout_below="@id/cViewTechMentor"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cViewTechMentor"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="12dp"
-            app:contentPadding="5dp">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
 
             <RelativeLayout
                 android:id="@+id/rManageLead"
@@ -221,6 +231,7 @@
                     android:layout_height="wrap_content"
                     android:background="#332CAB"
                     android:padding="5dp"
+                    android:layout_margin="5dp"
                     app:srcCompat="@drawable/ic_stclogo" />
 
                 <TextView
@@ -265,12 +276,14 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cViewFinanceLead"
+            android:layout_below="@id/cViewManageLead"
+            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/cViewManageLead"
-            android:layout_marginTop="20dp"
-            app:cardCornerRadius="12dp"
-            app:contentPadding="5dp">
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
 
             <RelativeLayout
                 android:id="@+id/rFinanceLead"
@@ -283,6 +296,7 @@
                     android:layout_height="wrap_content"
                     android:background="#332CAB"
                     android:padding="5dp"
+                    android:layout_margin="5dp"
                     app:srcCompat="@drawable/ic_stclogo" />
 
                 <TextView

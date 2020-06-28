@@ -20,6 +20,8 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
 
     Context mContext2;
     List<githubFragment> mData2;
+    public static int mExpandedPosition=-1;
+    public static int previousExpandedPosition=-1;
 
     public githubFragmentAdapter(Context mContext2, List<githubFragment> mData2) {
         this.mContext2 = mContext2;
@@ -51,6 +53,20 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
                 mContext2.startActivity(intent);
             }
         });
+        final boolean isExpanded = position==mExpandedPosition;
+        holder.githubProj_link.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.itemView.setActivated(isExpanded);
+        if (isExpanded)
+            previousExpandedPosition = position;
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mExpandedPosition = isExpanded ? -1:position;
+                notifyItemChanged(previousExpandedPosition);
+                notifyItemChanged(position);
+            }
+        });
     }
 
     @Override
@@ -67,6 +83,7 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
 
             githubProj_link = (TextView) itemView.findViewById(R.id.tv_repo_link);
             githubProj_title = (TextView) itemView.findViewById(R.id.tv_github_title);
+            githubProj_link.setVisibility(View.GONE);
         }
 
     }
