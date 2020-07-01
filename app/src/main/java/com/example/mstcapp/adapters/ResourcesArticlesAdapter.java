@@ -3,20 +3,29 @@ package com.example.mstcapp.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 
+import com.example.mstcapp.MainActivity;
 import com.example.mstcapp.R;
 
 import java.io.LineNumberInputStream;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+
+import static android.view.ViewGroup.*;
+import static android.view.ViewGroup.LayoutParams.*;
 
 public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArticlesAdapter.ResourcesArticleView> {
 
@@ -42,23 +51,29 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
 
     @Override
     public void onBindViewHolder(@NonNull final ResourcesArticleView holder, final int position) {
+
         holder.res_article_title.setText(res_article_titleList.get(position));
         holder.res_article_link.setText(res_article_linkList.get(position));
         final boolean isExpanded = position==mExpandedPosition;
         holder.res_article_link.setVisibility(isExpanded?View.VISIBLE:View.GONE);
         holder.itemView.setActivated(isExpanded);
-        if (isExpanded)
+        if (isExpanded) {
             previousExpandedPosition = position;
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 mExpandedPosition = isExpanded ? -1:position;
                 notifyItemChanged(previousExpandedPosition);
                 notifyItemChanged(position);
 
             }
+
+
         });
+
 
         holder.res_article_link.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +85,8 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
             }
         });
 
-
     }
+
 
     @Override
     public int getItemCount() {
@@ -81,10 +96,13 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
     public class ResourcesArticleView extends RecyclerView.ViewHolder{
 
         TextView res_article_title,res_article_link;
+        CardView cardView_resArticles;
         public ResourcesArticleView(@NonNull View itemView) {
             super(itemView);
             res_article_title=itemView.findViewById(R.id.res_article_title);
             res_article_link=itemView.findViewById(R.id.res_article_link);
+            cardView_resArticles=itemView.findViewById(R.id.resarticles_cardview);
+            cardView_resArticles.getLayoutParams();
             res_article_link.setVisibility(View.GONE);
 
         }

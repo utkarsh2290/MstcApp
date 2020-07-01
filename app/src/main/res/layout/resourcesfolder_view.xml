@@ -25,7 +25,7 @@
             android:id="@+id/resfolder_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="8dp"
             android:layout_toEndOf="@+id/resfolder_image"
             android:fontFamily="@font/montserrat"
             android:text="sample"

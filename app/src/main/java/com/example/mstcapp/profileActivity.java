@@ -88,7 +88,9 @@ public class profileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                Intent intent =new Intent(getApplicationContext(),FirstActivity.class);
+                intent.putExtra("Check",true);
+                startActivity(intent);
                 finish();
             }
         });

@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +24,8 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private EditText mUserEmail, mUserPassword;
-    private Button mUserLogin, mForgotPassword;
+    private Button mUserLogin;
+    TextView mForgotPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -36,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
         mUserPassword = findViewById(R.id.loginPassword);
         mUserLogin = findViewById(R.id.btn_Login);
         mForgotPassword = findViewById(R.id.forgotPassword);
+
+
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -96,4 +100,5 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
 }

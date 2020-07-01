@@ -19,6 +19,7 @@ import java.util.List;
 
 public class fragmentAttendance extends Fragment {
     List<String> attendance_titles=new ArrayList<>();
+    List<String> attendance_content=new ArrayList<>();
     RecyclerView recyclerView_attendance;
     @Nullable
     @Override
@@ -34,8 +35,11 @@ public class fragmentAttendance extends Fragment {
         attendance_titles.add("Attendance List");
         attendance_titles.add("Attendance List");
 
+        attendance_content.add("Attendance names ");
+        attendance_content.add("Attendance names ");
+
         recyclerView_attendance.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView_attendance.setAdapter(new attendanceAdapter(attendance_titles));
+        recyclerView_attendance.setAdapter(new attendanceAdapter(attendance_titles,attendance_content));
     }
 
     @Override

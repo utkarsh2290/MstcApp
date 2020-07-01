@@ -30,6 +30,11 @@ public class FirstActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+        Intent intent= getIntent();
+        boolean check = intent.getBooleanExtra("check",false);
+        if(check){
+            onBackPressed();
+        }
 
         firebaseAuth_initial=FirebaseAuth.getInstance();
         if(firebaseAuth_initial.getCurrentUser()!=null){
@@ -57,6 +62,7 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FirstActivity.this,LoginActivity.class));
+
             }
         });
 
@@ -84,5 +90,12 @@ public class FirstActivity extends AppCompatActivity {
             }, 2000);
         }
     };
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+    }
 
 }

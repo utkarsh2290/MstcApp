@@ -3,6 +3,7 @@ package com.example.mstcapp.adapters;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -37,7 +38,9 @@ public class momRecyclerviewAdapter extends RecyclerView.Adapter < momRecyclervi
         holder.textView_mom_content.setText(mom_content_list.get(position));
         final boolean isExpanded = position==mExpandedPosition;
         holder.textView_mom_content.setVisibility(isExpanded?View.VISIBLE:View.GONE);
-
+        holder.date_num.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.date_month.setVisibility(isExpanded?View.VISIBLE:View.GONE);
+        holder.imageView_mom.setVisibility(isExpanded?View.VISIBLE:View.GONE);
         holder.itemView.setActivated(isExpanded);
         if (isExpanded)
             previousExpandedPosition = position;
@@ -58,12 +61,22 @@ public class momRecyclerviewAdapter extends RecyclerView.Adapter < momRecyclervi
     }
 
     public class momViewholder extends RecyclerView.ViewHolder{
+        ImageView imageView_mom;
         TextView textView_mom_title,textView_mom_content;
+        TextView date_num,date_month;
+
         public momViewholder(@NonNull View itemView) {
             super(itemView);
             textView_mom_title=itemView.findViewById(R.id.mom_title);
             textView_mom_content=itemView.findViewById(R.id.mom_content);
+            imageView_mom=itemView.findViewById(R.id.mom_image);
+            date_month=itemView.findViewById(R.id.mom_month);
+            date_num=itemView.findViewById(R.id.mom_date_num);
+
+            date_month.setVisibility(View.GONE);
+            date_num.setVisibility(View.GONE);
             textView_mom_content.setVisibility(View.GONE);
+            imageView_mom.setVisibility(View.GONE);
         }
     }
 }

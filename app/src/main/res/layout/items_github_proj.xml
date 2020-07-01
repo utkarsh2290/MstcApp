@@ -24,6 +24,7 @@
                 android:fontFamily="@font/montserrat_medium"
                 android:text="Name of Project"
                 android:textSize="20dp"
+                android:layout_marginLeft="8dp"
                 android:textColor="@color/black" />
 
             <TextView
@@ -34,6 +35,7 @@
                 android:fontFamily="@font/montserrat"
                 android:textColor="@color/link_blue"
                 android:layout_marginTop="4dp"
+                android:layout_marginLeft="8dp"
                 android:text="Repo Link"
                 android:textSize="16dp" />
         </RelativeLayout>

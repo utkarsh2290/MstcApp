@@ -111,21 +111,21 @@
                 app:layout_scrollFlags="noScroll"
                 app:tabGravity="fill"
                 app:tabIndicatorColor="@color/white"
-                app:tabBackground="@drawable/tab_background"
                 app:tabMode="fixed"
-                app:tabTextAppearance="@style/tab_font"
                 app:tabSelectedTextColor="#000000"
+                app:tabTextAppearance="@style/tab_font"
                 app:tabTextColor="#666666">
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
+                    android:background="@drawable/tab_left_select"
                     android:text="ABOUT US" />
 
                 <com.google.android.material.tabs.TabItem
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/tab_right_unselect"
                     android:text="OUR BOARD" />
             </com.google.android.material.tabs.TabLayout>
 

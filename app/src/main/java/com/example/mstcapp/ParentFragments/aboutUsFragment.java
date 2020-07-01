@@ -19,7 +19,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.mstcapp.adapters.aboutPagerAdapter;
 import com.example.mstcapp.R;
-import com.example.mstcapp.aboutFragment.boardFragment;
+import com.example.mstcapp.aboutFragment.*;
 import com.example.mstcapp.aboutFragment.infoFragment;
 import com.google.android.material.tabs.TabLayout;
 
@@ -84,6 +84,14 @@ public class aboutUsFragment extends Fragment {
         });
 
         //replaceFragment(new infoFragment());
+        View firstTab = ((ViewGroup)    tabLayout.getChildAt(0)).getChildAt(0);
+        View secondTab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(1);
+        tabLayout.setSelectedTabIndicatorHeight(0);
+        firstTab.setSelected(true);
+        secondTab.setSelected(false);
+
+        firstTab.setBackground(getResources().getDrawable(R.drawable.tab_left_select));
+        secondTab.setBackground(getResources().getDrawable(R.drawable.tab_right_unselect));
     }
 
     @Nullable
@@ -110,6 +118,31 @@ public class aboutUsFragment extends Fragment {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 viewPager.setCurrentItem(tab.getPosition(), false);
+                int selectedTabPosition = tab.getPosition();
+                tabLayout.setSelectedTabIndicatorHeight(0);
+
+                View firstTab = ((ViewGroup)    tabLayout.getChildAt(0)).getChildAt(0);
+                View secondTab = ((ViewGroup) tabLayout.getChildAt(0)).getChildAt(1);
+
+                firstTab.setSelected(true);
+                secondTab.setSelected(false);
+
+                firstTab.setBackground(getResources().getDrawable(R.drawable.tab_left_select));
+                secondTab.setBackground(getResources().getDrawable(R.drawable.tab_right_unselect));
+                if (selectedTabPosition == 0)
+                { // that means first tab
+                    firstTab.setBackground(getResources().getDrawable(R.drawable.tab_left_select));
+                    secondTab.setBackground(getResources().getDrawable(R.drawable.tab_right_unselect));
+
+
+                } else if (selectedTabPosition == 1)
+                { // that means it's a last tab
+
+                    firstTab.setBackground(getResources().getDrawable(R.drawable.tab_left_unselect));
+                    secondTab.setBackground(getResources().getDrawable(R.drawable.tab_right_select));
+
+
+                }
              /*   if (tab.getPosition() == 0) {
                     replaceFragment(new infoFragment());
                 } else if (tab.getPosition() == 1) {

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp"
-    app:cardElevation="3dp"
+    app:cardElevation="4dp"
     app:contentPadding="4dp"
     app:cardUseCompatPadding="true"
     android:padding="8dp">
@@ -14,29 +14,21 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp">
-
-        <ImageView
-            android:id="@+id/attendance_image"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/sample_image_fill"/>
-
-
         <TextView
             android:id="@+id/attendance_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_toEndOf="@+id/attendance_image"
+            android:layout_marginLeft="8dp"
             android:fontFamily="@font/montserrat"
             android:text="Title"
             android:textColor="@color/black"
-            android:textSize="24dp" />
+            android:textSize="20dp" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/attendance_image"
+            android:layout_below="@+id/attendance_title"
             android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
             android:id="@+id/attendance_content"
             android:fontFamily="@font/montserrat"
             android:textSize="16dp"

@@ -27,12 +27,13 @@
                 android:fontFamily="@font/montserrat"
                 android:id="@+id/resappbar_title"/>
 
-            <ImageView
+            <ImageButton
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="16dp"
+                android:scaleType="fitCenter"
                 android:layout_marginBottom="28dp"
                 android:background="@color/white"
                 android:src="@drawable/stc_appbarlogo"
