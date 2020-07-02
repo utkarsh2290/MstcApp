@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,94 +7,99 @@
     android:background="#332CAB"
     android:visibility="visible"
     tools:context=".LoginActivity">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="60dp"
-        app:srcCompat="@drawable/stc_white_first" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            app:srcCompat="@drawable/stc_white_first" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/logo"
-        android:layout_marginTop="60dp"
-        android:layout_centerHorizontal="true"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="Login into your account"
-        android:textColor="#ffffff"
-        android:textSize="24dp" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logo"
+            android:layout_marginTop="60dp"
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Login into your account"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
 
-    <EditText
-        android:id="@+id/loginEmail"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/textView2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="10dp"
-        android:alpha="0.75"
-        android:backgroundTint="#EBEFF8"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_medium"
-        android:hint="Enter your Email"
-        android:inputType="textEmailAddress"
-        android:textColor="@android:color/white"
-        android:textColorHint=" #E5E5E5"
-        android:textCursorDrawable="@color/white"
-        android:textSize="16dp" />
+        <EditText
+            android:id="@+id/loginEmail"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:alpha="0.75"
+            android:backgroundTint="#EBEFF8"
+            android:cursorVisible="true"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_medium"
+            android:hint="Enter your Email"
+            android:inputType="textEmailAddress"
+            android:textColor="@android:color/white"
+            android:textColorHint=" #E5E5E5"
+            android:textCursorDrawable="@null"
+            android:textSize="16dp" />
 
-    <EditText
-        android:id="@+id/loginPassword"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginEmail"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:alpha="0.8"
-        android:backgroundTint="#EBEFF8"
-        android:ems="10"
-        android:fontFamily="@font/montserrat_medium"
-        android:gravity="start"
-        android:hint="Enter your Password"
-        android:inputType="textPassword"
-        android:textColor="@android:color/white"
-        android:textColorHint=" #E5E5E5"
-        android:textCursorDrawable="@color/white"
-        android:textSize="16dp" />
+        <EditText
+            android:id="@+id/loginPassword"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:alpha="0.8"
+            android:backgroundTint="#EBEFF8"
+            android:cursorVisible="true"
+            android:ems="10"
+            android:fontFamily="@font/montserrat_medium"
+            android:gravity="start"
+            android:hint="Enter your Password"
+            android:inputType="textPassword"
+            android:textColor="@android:color/white"
+            android:textColorHint=" #E5E5E5"
+            android:textCursorDrawable="@null"
+            android:textSize="16dp" />
 
-    <TextView
-        android:id="@+id/forgotPassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/loginPassword"
-        android:layout_alignEnd="@+id/textView2"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="0dp"
-        android:alpha="0.5"
-        android:background="#332CAB"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="Forgot Password?"
-        android:textColor="@color/white"
-        android:textSize="12dp" />
+        <TextView
+            android:id="@+id/forgotPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/loginPassword"
+            android:layout_alignEnd="@+id/textView2"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="0dp"
+            android:alpha="0.5"
+            android:background="#332CAB"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Forgot Password?"
+            android:textColor="@color/white"
+            android:textSize="12dp" />
 
-    <Button
-        android:id="@+id/btn_Login"
-        android:layout_width="294dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/forgotPassword"
-        android:layout_alignStart="@+id/loginPassword"
-        android:layout_alignEnd="@+id/loginPassword"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginStart="4dp"
-        android:background="@drawable/btn_rounded"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/montserrat_medium"
-        android:text="Login"
-        android:textColor="#332CAB"
-        android:textSize="16dp" />
-</RelativeLayout>
+        <Button
+            android:id="@+id/btn_Login"
+            android:layout_width="294dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/forgotPassword"
+            android:layout_alignStart="@+id/loginPassword"
+            android:layout_alignEnd="@+id/loginPassword"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/btn_rounded"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Login"
+            android:textColor="#332CAB"
+            android:textSize="16dp" />
+    </RelativeLayout>
+</ScrollView>

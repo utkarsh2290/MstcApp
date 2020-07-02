@@ -10,6 +10,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
@@ -44,7 +45,7 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
     @Override
     public void onBindViewHolder(@NonNull attendanceViewholer holder, final int position) {
         holder.attendance_title.setText(list_attendance_titles.get(position));
-        holder.attendance_content.setText(list_attendance_content.get(position));
+        //holder.attendance_content.setText(list_attendance_content.get(position));
         final boolean isExpanded = position==mExpandedPosition;
         holder.attendance_content.setVisibility(isExpanded?View.VISIBLE:View.GONE);
         holder.date_num.setVisibility(isExpanded?View.VISIBLE:View.GONE);
@@ -72,6 +73,7 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
     public class attendanceViewholer extends RecyclerView.ViewHolder{
 
 
+        RecyclerView recyclerView_nest_attd;
         TextView attendance_title,attendance_content;
         ImageView attendance_imageview;
         TextView date_num,date_month;
@@ -83,7 +85,12 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
             date_month=itemView.findViewById(R.id.attd_month);
             date_num=itemView.findViewById(R.id.attd_date_num);
             attendance_imageview=itemView.findViewById(R.id.attd_image);
+            recyclerView_nest_attd=itemView.findViewById(R.id.nested_rv);
 
+            recyclerView_nest_attd.setLayoutManager(new LinearLayoutManager(context));
+            recyclerView_nest_attd.setAdapter(new nestedAttendanceadapter(list_attendance_content));
+
+            recyclerView_nest_attd.setVisibility(View.GONE);
             attendance_content.setVisibility(View.GONE);
             attendance_imageview.setVisibility(View.GONE);
             date_month.setVisibility(View.GONE);

@@ -22,12 +22,11 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity {
 
-
     private EditText mUserEmail, mUserPassword;
     private Button mUserLogin;
     TextView mForgotPassword;
     private FirebaseAuth mAuth;
-
+    private int clickcount=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,67 +38,67 @@ public class LoginActivity extends AppCompatActivity {
         mUserLogin = findViewById(R.id.btn_Login);
         mForgotPassword = findViewById(R.id.forgotPassword);
 
+        mAuth = FirebaseAuth.getInstance();
 
-
-        mAuth=FirebaseAuth.getInstance();
-
-        if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+        if (mAuth.getCurrentUser() != null) {
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
 
-        mUserLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //CHECKING FIELDS
-                String email=mUserEmail.getText().toString().trim();
-                String password=mUserPassword.getText().toString().trim();
+            mUserLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //CHECKING FIELDS
+                    if(clickcount==0){
+                        String email = mUserEmail.getText().toString().trim();
+                        String password = mUserPassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(email)){
-                    mUserEmail.setError("Email is Required.");
-                    return;
-                }
-
-                if(TextUtils.isEmpty(password)){
-                    mUserPassword.setError("Password is Required.");
-                    return;
-                }
-
-                if(password.length()<6){
-                    mUserPassword.setError("Password Must be >= 6 Characters");
-                    return;
-                }
-
-
-                //REGISTERING USER ON FIREBASE
-
-                mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            mUserLogin.setOnClickListener(null);
-                            Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                            finish();
-
+                        if (TextUtils.isEmpty(email)) {
+                            mUserEmail.setError("Email is Required.");
+                            return;
                         }
-                        else{
-                            Toast.makeText(LoginActivity.this, "Unable to Login" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
+                        if (TextUtils.isEmpty(password)) {
+                            mUserPassword.setError("Password is Required.");
+                            return;
                         }
+
+                        if (password.length() < 6) {
+                            mUserPassword.setError("Password Must be >= 6 Characters");
+                            return;
+                        }
+
+                        //REGISTERING USER ON FIREBASE
+
+                        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+
+                                    Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
+                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    finish();
+
+                                } else {
+                                    Toast.makeText(LoginActivity.this, "Unable to Login" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        clickcount=1;
                     }
-                });
+                    else if(clickcount==1){
+                        mUserLogin.setEnabled(false);
+                    }
 
-            }
-        });
+
+                }
+            });
 
         mForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),forgotPasswordActivity.class));
-
             }
         });
     }
-
 }

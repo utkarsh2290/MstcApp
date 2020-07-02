@@ -62,6 +62,7 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(FirstActivity.this,LoginActivity.class));
+                finish();
 
             }
         });

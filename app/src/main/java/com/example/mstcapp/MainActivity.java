@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
             user=firebaseAuth.getCurrentUser();
             mail=user.getEmail();
 
+
             uEmail=mail.replace('.','_');
 
             storeRef= FirebaseStorage.getInstance().getReference().child("Profile Pictures").child(uEmail);
@@ -155,4 +156,5 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
             };
+
 }

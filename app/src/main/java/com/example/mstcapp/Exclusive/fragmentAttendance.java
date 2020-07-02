@@ -36,8 +36,6 @@ public class fragmentAttendance extends Fragment {
         attendance_titles.add("Attendance List");
         attendance_titles.add("Attendance List");
 
-        attendance_content.add("Attendance names ");
-        attendance_content.add("Attendance names ");
 
         recyclerView_attendance.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView_attendance.setAdapter(new attendanceAdapter(attendance_titles,attendance_content,getContext()));

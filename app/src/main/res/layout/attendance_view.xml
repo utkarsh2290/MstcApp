@@ -60,8 +60,13 @@
             android:id="@+id/attendance_content"
             android:fontFamily="@font/montserrat"
             android:textSize="16dp"
-            android:text="Sample"
+            android:text="Prajesh \nUtkarsh \nPrateek \nNiharika"
             android:textColor="@color/black"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/attd_image"
+            android:id="@+id/nested_rv"/>
 
     </RelativeLayout>
 
