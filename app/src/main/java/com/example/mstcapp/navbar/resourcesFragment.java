@@ -58,7 +58,7 @@ public class resourcesFragment extends Fragment {
         domain_backgroundId.add(R.drawable.android_symbol_green);
         domain_backgroundId.add(R.drawable.flutter_bg);
         domain_backgroundId.add(R.drawable.webdev_bg);
-        domain_backgroundId.add(R.drawable.webdev_bg);
+        domain_backgroundId.add(R.drawable.ic_backend);
         domain_backgroundId.add(R.drawable.bg_datascience);
         domain_backgroundId.add(R.drawable.competitive_bg);
 

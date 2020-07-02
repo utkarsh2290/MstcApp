@@ -28,12 +28,6 @@ public class boardFragment extends Fragment {
         ImageView imageView4=(ImageView)view1.findViewById(R.id.photoManageLead);
         ImageView imageView5=(ImageView)view1.findViewById(R.id.photoFinanceLead);
 
-        imageView.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_stclogo,null));
-        imageView2.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_stclogo,null));
-        imageView3.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_stclogo,null));
-        imageView4.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_stclogo,null));
-        imageView5.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_stclogo,null));
-
         return view1;
     }
 }

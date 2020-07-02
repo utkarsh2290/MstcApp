@@ -34,9 +34,8 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="false"
                     android:layout_margin="5dp"
-                    android:background="#332CAB"
                     android:padding="5dp"
-                    app:srcCompat="@drawable/ic_stclogo" />
+                    android:src="@drawable/ic_boardimg" />
 
                 <TextView
                     android:id="@+id/namePresident"
@@ -99,10 +98,9 @@
                     android:id="@+id/photoProLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#332CAB"
                     android:padding="5dp"
                     android:layout_margin="5dp"
-                    app:srcCompat="@drawable/ic_stclogo" />
+                    android:src="@drawable/ic_boardimg" />
 
                 <TextView
                     android:id="@+id/nameProLead"
@@ -164,10 +162,9 @@
                     android:id="@+id/photoTechMentor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#332CAB"
                     android:padding="5dp"
                     android:layout_margin="5dp"
-                    app:srcCompat="@drawable/ic_stclogo" />
+                    android:src="@drawable/ic_boardimg" />
 
                 <TextView
                     android:id="@+id/nameTechMentor"
@@ -229,10 +226,9 @@
                     android:id="@+id/photoManageLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#332CAB"
                     android:padding="5dp"
                     android:layout_margin="5dp"
-                    app:srcCompat="@drawable/ic_stclogo" />
+                    android:src="@drawable/sample_image_fill" />
 
                 <TextView
                     android:id="@+id/nameManageLead"
@@ -294,10 +290,9 @@
                     android:id="@+id/photoFinanceLead"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="#332CAB"
                     android:padding="5dp"
                     android:layout_margin="5dp"
-                    app:srcCompat="@drawable/ic_stclogo" />
+                    android:src="@drawable/ic_boardimg" />
 
                 <TextView
                     android:id="@+id/nameFinanceLead"

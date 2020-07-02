@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
+import com.example.mstcapp.exclusiveModels.updatesModelClass;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -18,14 +19,14 @@ import java.util.List;
 import java.util.Locale;
 
 public class updatesAdapter extends RecyclerView.Adapter<updatesAdapter.updatesViewholder>{
-    List <String> list_updates_titles;
-    List <String> list_updates_content;
+
+    List <updatesModelClass> list_updates;
     public static int mExpandedPosition=-1;
     public static int previousExpandedPosition=-1;
-    public updatesAdapter(List<String> updatesTitles, List<String> updates_content) {
-        list_updates_titles=updatesTitles;
-        list_updates_content=updates_content;
 
+
+    public updatesAdapter(List<updatesModelClass> list_updates) {
+        this.list_updates = list_updates;
     }
 
     @NonNull
@@ -38,8 +39,13 @@ public class updatesAdapter extends RecyclerView.Adapter<updatesAdapter.updatesV
 
     @Override
     public void onBindViewHolder(@NonNull updatesViewholder holder, final int position) {
-    holder.updates_title.setText(list_updates_titles.get(position));
-    holder.updates_content.setText(list_updates_content.get(position));
+        String date = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault()).format(new Date());
+        String date_num=date.substring(0,2);
+        String date_month=date.substring(3,6);
+        holder.updates_title.setText(list_updates.get(position).getTitle());
+        holder.updates_content.setText(list_updates.get(position).getContent());
+        holder.date_num.setText(list_updates.get(position).getDate());
+        holder.date_month.setText(list_updates.get(position).getMonth());
         final boolean isExpanded = position==mExpandedPosition;
         holder.updates_content.setVisibility(isExpanded?View.VISIBLE:View.GONE);
         holder.imageView_updates.setVisibility(isExpanded?View.VISIBLE:View.GONE);
@@ -66,7 +72,7 @@ public class updatesAdapter extends RecyclerView.Adapter<updatesAdapter.updatesV
 
     @Override
     public int getItemCount() {
-        return list_updates_titles.size();
+        return list_updates.size();
     }
 
     public class updatesViewholder extends RecyclerView.ViewHolder{

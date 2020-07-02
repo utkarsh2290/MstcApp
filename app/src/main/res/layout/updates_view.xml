@@ -35,12 +35,11 @@
             android:id="@+id/updates_date_num"
             android:textColor="@color/white"/>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="85dp"
             android:layout_height="wrap_content"
             android:text="MMM"
             android:textSize="24dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
+            android:gravity="center"
             android:layout_below="@+id/updates_date_num"
             android:fontFamily="@font/montserrat_semibold"
             android:id="@+id/updates_month"
@@ -51,7 +50,7 @@
             android:id="@+id/update_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
+            android:layout_marginLeft="8dp"
             android:layout_toEndOf="@+id/updates_image"
             android:fontFamily="@font/montserrat"
             android:text="Title of MOM"

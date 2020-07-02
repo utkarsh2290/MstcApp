@@ -10,19 +10,21 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
+import com.example.mstcapp.exclusiveModels.momModelClass;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class momRecyclerviewAdapter extends RecyclerView.Adapter < momRecyclerviewAdapter.momViewholder > {
-    List <String> mom_titles_list=new ArrayList<>();
-    List <String> mom_content_list=new ArrayList<>();
+
+    List<momModelClass> mom_class_list=new ArrayList<>();
     public static int mExpandedPosition=-1;
     public static int previousExpandedPosition=-1;
 
-    public momRecyclerviewAdapter(List<String> mom_titles, List<String> mom_content) {
-        mom_titles_list=mom_titles;
-        mom_content_list=mom_content;
+
+
+    public momRecyclerviewAdapter(List<momModelClass> momModelClass_list) {
+        mom_class_list=momModelClass_list;
     }
 
     @NonNull
@@ -34,8 +36,10 @@ public class momRecyclerviewAdapter extends RecyclerView.Adapter < momRecyclervi
 
     @Override
     public void onBindViewHolder(@NonNull momViewholder holder, final int position) {
-        holder.textView_mom_title.setText(mom_titles_list.get(position));
-        holder.textView_mom_content.setText(mom_content_list.get(position));
+        holder.textView_mom_title.setText(mom_class_list.get(position).getTitle());
+        holder.textView_mom_content.setText(mom_class_list.get(position).getContent());
+        holder.date_month.setText(mom_class_list.get(position).getMonth());
+        holder.date_num.setText(mom_class_list.get(position).getDate());
         final boolean isExpanded = position==mExpandedPosition;
         holder.textView_mom_content.setVisibility(isExpanded?View.VISIBLE:View.GONE);
         holder.date_num.setVisibility(isExpanded?View.VISIBLE:View.GONE);
@@ -57,7 +61,7 @@ public class momRecyclerviewAdapter extends RecyclerView.Adapter < momRecyclervi
 
     @Override
     public int getItemCount() {
-        return mom_titles_list.size();
+        return mom_class_list.size();
     }
 
     public class momViewholder extends RecyclerView.ViewHolder{
