@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-
+import com.example.mstcapp.exclusiveModels.attendanceModelClass;
 
 
 import java.util.ArrayList;
@@ -24,15 +24,13 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
     List<String> list_attendance_titles=new ArrayList<>();
     List<String> list_attendance_content=new ArrayList<>();
     Context context;
-
-    ArrayList<String> attd_names=new ArrayList<>();
+    List<attendanceModelClass> attendanceModelClassList=new ArrayList<>();
 
     public static int mExpandedPosition=-1;
     public static int previousExpandedPosition=-1;
-    public attendanceAdapter(List<String> attendance_titles,List <String> attendance_content,Context cont) {
-        list_attendance_titles=attendance_titles;
-        list_attendance_content=attendance_content;
-        context=cont;
+
+    public attendanceAdapter(List<attendanceModelClass> attendanceModelClasses_list) {
+        attendanceModelClassList=attendanceModelClasses_list;
     }
 
     @NonNull
@@ -44,8 +42,14 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
 
     @Override
     public void onBindViewHolder(@NonNull attendanceViewholer holder, final int position) {
-        holder.attendance_title.setText(list_attendance_titles.get(position));
-        //holder.attendance_content.setText(list_attendance_content.get(position));
+        holder.attendance_title.setText(attendanceModelClassList.get(position).getTitle());
+        List<String> contents=attendanceModelClassList.get(position).getContent();
+        int size=attendanceModelClassList.get(position).getContent().size();
+        for(int i=0;i<size;i++){
+            holder.attendance_content.setText(contents.get(i)+"\n");
+        }
+        holder.date_num.setText(attendanceModelClassList.get(position).getDate());
+        holder.date_month.setText(attendanceModelClassList.get(position).getMonth());
         final boolean isExpanded = position==mExpandedPosition;
         holder.attendance_content.setVisibility(isExpanded?View.VISIBLE:View.GONE);
         holder.date_num.setVisibility(isExpanded?View.VISIBLE:View.GONE);
@@ -67,13 +71,13 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
 
     @Override
     public int getItemCount() {
-        return list_attendance_titles.size();
+        return attendanceModelClassList.size();
     }
 
     public class attendanceViewholer extends RecyclerView.ViewHolder{
 
 
-        RecyclerView recyclerView_nest_attd;
+
         TextView attendance_title,attendance_content;
         ImageView attendance_imageview;
         TextView date_num,date_month;
@@ -85,12 +89,7 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
             date_month=itemView.findViewById(R.id.attd_month);
             date_num=itemView.findViewById(R.id.attd_date_num);
             attendance_imageview=itemView.findViewById(R.id.attd_image);
-            recyclerView_nest_attd=itemView.findViewById(R.id.nested_rv);
 
-            recyclerView_nest_attd.setLayoutManager(new LinearLayoutManager(context));
-            recyclerView_nest_attd.setAdapter(new nestedAttendanceadapter(list_attendance_content));
-
-            recyclerView_nest_attd.setVisibility(View.GONE);
             attendance_content.setVisibility(View.GONE);
             attendance_imageview.setVisibility(View.GONE);
             date_month.setVisibility(View.GONE);

@@ -2,11 +2,17 @@ package com.example.mstcapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -14,7 +20,7 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class FirstActivity extends AppCompatActivity {
+public class FirstActivity extends Activity {
 
     public static final String SHARED_PREFS ="sharedprefs";
 
@@ -24,12 +30,13 @@ public class FirstActivity extends AppCompatActivity {
     private RelativeLayout relativeLayout;
     private Handler mhandler= new Handler();
     FirebaseAuth firebaseAuth_initial;
-
+    boolean nav=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
+        getWindow().setStatusBarColor(Color.BLACK);
         Intent intent= getIntent();
         boolean check = intent.getBooleanExtra("check",false);
         if(check){
@@ -38,14 +45,19 @@ public class FirstActivity extends AppCompatActivity {
 
         firebaseAuth_initial=FirebaseAuth.getInstance();
         if(firebaseAuth_initial.getCurrentUser()!=null){
-            startActivity(new Intent(FirstActivity.this,MainActivity.class));
+            Intent i= new Intent(getApplicationContext(),MainActivity.class);
+            nav=true;
+            i.putExtra("NAV_CHECK",nav);
+            startActivity(i);
+            Log.i("Check1",nav+"");
             finish();
         }
 
         SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         final SharedPreferences.Editor editor=sharedPreferences.edit();
         if(sharedPreferences.getBoolean(SHARED_PREFS,false)==true){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            Intent i= new Intent(getApplicationContext(),MainActivity.class);
+            startActivity(i);
             finish();
         }
 
@@ -71,7 +83,9 @@ public class FirstActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 editor.putBoolean(SHARED_PREFS,true).apply();
-                startActivity(new Intent(FirstActivity.this,MainActivity.class));
+                Intent i= new Intent(getApplicationContext(),MainActivity.class);
+                i.putExtra("NAV",false);
+                startActivity(i);
                 finish();
             }
         });

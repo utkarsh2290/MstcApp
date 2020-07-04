@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -27,10 +28,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class profileActivity extends AppCompatActivity {
 
-    private ImageView userProfilePicture;
+    private CircularImageView userProfilePicture;
     private EditText userName,userEmail,userRegNo,userDomain,userRoomNo,userPhoneNo;
     private Button btn_Logout;
     private FirebaseAuth mAuth;
@@ -48,7 +50,7 @@ public class profileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-
+        getWindow().setStatusBarColor(Color.WHITE);
         mProgressCircular=findViewById(R.id.progressBar);
         userProfilePicture=findViewById(R.id.profilePicture);
         userName=findViewById(R.id.userName);
@@ -59,7 +61,7 @@ public class profileActivity extends AppCompatActivity {
         userDomain=findViewById(R.id.domain_user);
         userPhoneNo=findViewById(R.id.phone_user);
         relativeLayout=findViewById(R.id.rLayout);
-
+        getWindow().setStatusBarColor(Color.WHITE);
 
         mAuth=FirebaseAuth.getInstance();
         user=mAuth.getCurrentUser();
@@ -72,7 +74,7 @@ public class profileActivity extends AppCompatActivity {
         storeRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
-               Glide.with(getApplicationContext()).load(uri).into(userProfilePicture);
+                Glide.with(getApplicationContext()).load(uri).into(userProfilePicture);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override

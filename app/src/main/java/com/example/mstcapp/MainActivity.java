@@ -5,11 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Button;
@@ -31,46 +35,56 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.mikhaellopez.circularimageview.CircularImageView;
 
 public class MainActivity extends AppCompatActivity {
-    BottomNavigationView bottomNavigationView;
+    BottomNavigationView bottomNavigationView,bottomNavigationView_ex;
     TextView appbar_title;
     AppBarLayout appBarLayout_main;
     ImageButton stc_logo;
     FirebaseAuth firebaseAuth;
-    public static int check=0;
+
     FirebaseUser user;
     StorageReference storeRef;
     String mail;
     String uEmail;
+    boolean nav_check=false;
+    CircularImageView profilePic;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        getWindow().setStatusBarColor(Color.WHITE);
 
         stc_logo=findViewById(R.id.stclogo_appbar);
+        profilePic=findViewById(R.id.profilePic);
         appBarLayout_main=findViewById(R.id.appbar_layout);
         appbar_title=findViewById(R.id.appbar_title);
         bottomNavigationView = findViewById(R.id.navigation_bottom);
+        bottomNavigationView_ex=findViewById(R.id.navigation_bottom);
+
+        profilePic.setVisibility(View.INVISIBLE);
+        Intent intent=getIntent();
+        nav_check=intent.getBooleanExtra("NAV_CHECK",false);
+        Log.i("CHECK"," "+nav_check);
 
         firebaseAuth=FirebaseAuth.getInstance();
-        if(firebaseAuth.getCurrentUser()!=null){
-            bottomNavigationView.inflateMenu(R.menu.bottom_navbar_five);
-            check=1;
+        if(nav_check==true){
+            bottomNavigationView_ex.inflateMenu(R.menu.bottom_navbar_five);
+            bottomNavigationView_ex.setOnNavigationItemSelectedListener(navigationItemSelectedListener_ex);
             user=firebaseAuth.getCurrentUser();
             mail=user.getEmail();
-
-
             uEmail=mail.replace('.','_');
-
             storeRef= FirebaseStorage.getInstance().getReference().child("Profile Pictures").child(uEmail);
-
             storeRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                 @Override
                 public void onSuccess(Uri uri) {
-                    Glide.with(getApplicationContext()).load(uri).into(stc_logo);
+
+                    stc_logo.setVisibility(View.INVISIBLE);
+                    profilePic.setVisibility(View.VISIBLE);
+                    Glide.with(getApplicationContext()).load(uri).into(profilePic);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -82,9 +96,16 @@ public class MainActivity extends AppCompatActivity {
         else
         {
             bottomNavigationView.inflateMenu(R.menu.bottom_navbar);
+            bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
             stc_logo.setEnabled(false);
         }
-        bottomNavigationView.setOnNavigationItemSelectedListener(navListener);
+        profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),profileActivity.class));
+            }
+        });
+
 
 
         //IF NO BUTTON IS SELECTED, FEED WILL BE SHOWN
@@ -105,54 +126,107 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     //navbar for non mstc users
     private BottomNavigationView.OnNavigationItemSelectedListener navListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                    Menu menu=bottomNavigationView.getMenu();
-                    menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_unfilled);
-                    menu.findItem(R.id.nav_resources).setIcon(R.drawable.ic_resources__unfilled);
-                    menu.findItem(R.id.nav_archive).setIcon(R.drawable.ic_highlights_unfilled);
-                    menu.findItem(R.id.nav_info).setIcon(R.drawable.ic_info_unfilled);
-                    if(check==1){
-                        menu.findItem(R.id.nav_exclusive).setIcon(R.drawable.ic_mstc_exclusive_unfilled);
-                    }
+                public boolean onNavigationItemSelected(@NonNull final MenuItem item) {
+                    new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            Menu menu=bottomNavigationView.getMenu();
+                            menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_unfilled);
+                            menu.findItem(R.id.nav_resources).setIcon(R.drawable.ic_resources__unfilled);
+                            menu.findItem(R.id.nav_archive).setIcon(R.drawable.ic_highlights_unfilled);
+                            menu.findItem(R.id.nav_info).setIcon(R.drawable.ic_info_unfilled);
 
+                            Fragment selectedFragment = null;
+                            switch (item.getItemId()) {
+                                case R.id.nav_home:
+                                    item.setIcon(R.drawable.ic_home);
+                                    appbar_title.setText("HOME");
+                                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                            new feedFragment()).addToBackStack(null).commit();
+                                    break;
+                                case R.id.nav_resources:
+                                    item.setIcon(R.drawable.ic_resources);
+                                    appbar_title.setText("RESOURCES");
+                                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                            new resourcesFragment()).addToBackStack(null).commit();
 
-                    Fragment selectedFragment = null;
-                    switch (item.getItemId()) {
-                        case R.id.nav_home:
-                            item.setIcon(R.drawable.ic_home);
-                            appbar_title.setText("HOME");
-                            selectedFragment = new feedFragment();
-                            break;
-                        case R.id.nav_resources:
-                            item.setIcon(R.drawable.ic_resources);
-                            appbar_title.setText("RESOURCES");
-                            selectedFragment = new resourcesFragment();
-                            break;
-                        case R.id.nav_archive:
-                            item.setIcon(R.drawable.ic_highlights);
-                            appbar_title.setText("HIGHLIGHTS");
-                            appBarLayout_main.setElevation(0);
-                            selectedFragment = new onlineFootprintFragment();
-                            break;
-                        case R.id.nav_exclusive:
-                            item.setIcon(R.drawable.ic_mstc_exclusive);
-                            appbar_title.setText("DETAILS");
-                            appBarLayout_main.setElevation(0);
-                            selectedFragment=new exclusiveFragment();
-                            break;
-                        case R.id.nav_info:
-                            appbar_title.setText("INFORMATION");
-                            item.setIcon(R.drawable.ic_info);
-                            selectedFragment = new aboutUsFragment();
-                            break;
-                    }
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                            selectedFragment).commit();
+                                    break;
+                                case R.id.nav_archive:
+                                    item.setIcon(R.drawable.ic_highlights);
+                                    appbar_title.setText("HIGHLIGHTS");
+                                    appBarLayout_main.setElevation(0);
+                                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                            new onlineFootprintFragment()).addToBackStack(null).commit();
+
+                                    break;
+                                case R.id.nav_info:
+                                    appbar_title.setText("INFORMATION");
+                                    item.setIcon(R.drawable.ic_info);
+                                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                            new aboutUsFragment()).addToBackStack(null).commit();
+
+                                    break;
+                            }
+                        }
+                    },200);
+                    return true;
+                }
+            };
+    private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener_ex=
+            new BottomNavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull final MenuItem item) {
+                   new Handler().postDelayed(new Runnable() {
+                       @Override
+                       public void run() {
+                           Menu menu=bottomNavigationView.getMenu();
+                           menu.findItem(R.id.nav_home).setIcon(R.drawable.ic_home_unfilled);
+                           menu.findItem(R.id.nav_resources).setIcon(R.drawable.ic_resources__unfilled);
+                           menu.findItem(R.id.nav_archive).setIcon(R.drawable.ic_highlights_unfilled);
+                           menu.findItem(R.id.nav_info).setIcon(R.drawable.ic_info_unfilled);
+                           menu.findItem(R.id.nav_exclusive).setIcon(R.drawable.ic_mstc_exclusive_unfilled);
+
+                           Fragment selectedFragment = null;
+                           switch (item.getItemId()) {
+                               case R.id.nav_home:
+                                   item.setIcon(R.drawable.ic_home);
+                                   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                           new feedFragment()).addToBackStack(null).commit();
+                                   appbar_title.setText("HOME");
+                                   break;
+                               case R.id.nav_resources:
+                                   item.setIcon(R.drawable.ic_resources);
+                                   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                           new resourcesFragment()).addToBackStack(null).commit();
+                                   appbar_title.setText("RESOURCES");
+                                   break;
+                               case R.id.nav_archive:
+                                   item.setIcon(R.drawable.ic_highlights);
+                                   appBarLayout_main.setElevation(0);
+                                   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                           new onlineFootprintFragment()).addToBackStack(null).commit();
+                                   appbar_title.setText("HIGHLIGHTS");
+                                   break;
+                               case R.id.nav_exclusive:
+                                   item.setIcon(R.drawable.ic_mstc_exclusive);
+                                   appBarLayout_main.setElevation(0);
+                                   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                           new exclusiveFragment()).addToBackStack(null).commit();
+                                   appbar_title.setText("DETAILS");
+                                   break;
+                               case R.id.nav_info:
+                                   item.setIcon(R.drawable.ic_info);
+                                   getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                                           new aboutUsFragment()).addToBackStack(null).commit();
+                                   appbar_title.setText("INFORMATION");
+                                   break;
+                           }
+                       }
+                   },100);
                     return true;
                 }
             };

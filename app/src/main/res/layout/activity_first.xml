@@ -20,7 +20,7 @@
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
-            app:srcCompat="@drawable/stc_white_first" />
+            android:src="@drawable/stc_white_first" />
 
         <TextView
             android:id="@+id/textView3"
@@ -32,7 +32,7 @@
             android:fontFamily="@font/montserrat_medium"
             android:text="STUDENT"
             android:textColor="#ffffff"
-            android:textSize="32sp"
+            android:textSize="32dp"
             android:textStyle="bold" />
 
         <TextView
@@ -45,7 +45,7 @@
             android:text="TECHNICAL"
             android:layout_marginTop="4dp"
             android:textColor="#ffffff"
-            android:textSize="32sp"
+            android:textSize="32dp"
             android:textStyle="bold" />
 
         <TextView
@@ -58,7 +58,7 @@
             android:fontFamily="@font/montserrat_medium"
             android:text="COMMUNITY"
             android:textColor="#ffffff"
-            android:textSize="32sp"
+            android:textSize="32dp"
             android:textStyle="bold" />
 
 
@@ -75,7 +75,7 @@
         <Button
             android:id="@+id/stcMember"
             android:layout_width="163dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_weight="1"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="8dp"
@@ -90,7 +90,7 @@
         <Button
             android:id="@+id/nonStcMember"
             android:layout_width="163dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             android:layout_weight="1"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="10dp"

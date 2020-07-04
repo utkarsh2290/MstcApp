@@ -29,6 +29,7 @@ public class forgotPasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setStatusBarColor(Color.BLACK);
         setContentView(R.layout.activity_forgot_password);
 
         mResetEmail=findViewById(R.id.resetEmail);

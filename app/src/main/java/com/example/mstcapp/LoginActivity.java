@@ -3,8 +3,11 @@ package com.example.mstcapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,17 +23,20 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends Activity {
 
     private EditText mUserEmail, mUserPassword;
     private Button mUserLogin;
     TextView mForgotPassword;
     private FirebaseAuth mAuth;
     private int clickcount=0;
+    boolean nav_login=false;
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        getWindow().setStatusBarColor(Color.BLACK);
 
         //INITIALIZING VIEWS
         mUserEmail = findViewById(R.id.loginEmail);
@@ -74,9 +80,12 @@ public class LoginActivity extends AppCompatActivity {
                             @Override
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
-
+                                    nav_login=true;
                                     Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    Intent i= new Intent(getApplicationContext(),MainActivity.class);
+                                    i.putExtra("NAV_CHECK",true);
+                                    startActivity(i);
+                                    Log.i("Check2",nav_login+"");
                                     finish();
 
                                 } else {

@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -51,6 +52,7 @@ public class ResourcesDetails extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources_details);
+        getWindow().setStatusBarColor(Color.WHITE);
         resappbar_title=findViewById(R.id.resappbar_title);
         tabLayout=findViewById(R.id.tab_view_resources);
         viewPager=findViewById(R.id.viewpager_res);

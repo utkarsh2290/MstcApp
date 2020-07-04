@@ -83,6 +83,7 @@ public class eventsFragments extends Fragment {
         recyclerView=(RecyclerView)view.findViewById(R.id.events_recycler);
         eventFragmentAdapter recyclerAdapter= new eventFragmentAdapter(getContext(),eventsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(recyclerAdapter);
         return view;
     }
@@ -90,7 +91,6 @@ public class eventsFragments extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         eventsList=new ArrayList<>();
         eventsList.add(new eventsFragments("Brew","Our Flagship Event",R.drawable.brew,"https://www.instagram.com/mstcvit/"));
         eventsList.add(new eventsFragments("Docker","Another Event",R.drawable.docker,"https://www.instagram.com/mstcvit/"));

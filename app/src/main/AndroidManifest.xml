@@ -8,10 +8,11 @@
         android:label="STC"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".forgotPasswordActivity"/>
-        <activity android:name=".profileActivity"></activity>
 
+        <activity android:name=".forgotPasswordActivity" />
+        <activity android:name=".profileActivity" />
         <activity android:name=".resourcespage.ResourcesDetails" />
         <activity android:name=".FirstActivity">
             <intent-filter>
@@ -21,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
