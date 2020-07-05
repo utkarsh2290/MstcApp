@@ -1,4 +1,4 @@
-package com.example.mstcapp.exclusiveFragments;
+package com.example.mstcapp.exclusiveFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

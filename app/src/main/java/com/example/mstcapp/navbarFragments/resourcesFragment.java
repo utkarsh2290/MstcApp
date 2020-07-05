@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.adapters.ResourcesAdapter;
+import com.example.mstcapp.adapters.resourcesAdapter;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
@@ -66,7 +66,7 @@ public class resourcesFragment extends Fragment {
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),2);
         recyclerView.setLayoutManager(gridLayoutManager);   //setting layout as grid in the recycler view
-        recyclerView.setAdapter(new ResourcesAdapter(domains,domain_backgroundId));//adapter for the recycler view
+        recyclerView.setAdapter(new resourcesAdapter(domains,domain_backgroundId));//adapter for the recycler view
 
 
 

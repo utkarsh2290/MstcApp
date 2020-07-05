@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.adapters.ResourcesArticlesAdapter;
+import com.example.mstcapp.adapters.resourcesArticlesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class articlelinksFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_articlelinks,container,false);
+        View view=inflater.inflate(R.layout.fragment_article,container,false);
         return view;
     }
 
@@ -43,7 +43,7 @@ public class articlelinksFragment extends Fragment {
 
         res_article_recyclerview=view.findViewById(R.id.res_article_recyclerview);
         res_article_recyclerview.setLayoutManager(new LinearLayoutManager(getContext()));
-        res_article_recyclerview.setAdapter(new ResourcesArticlesAdapter(sample_titles_article,sample_titles_links,getContext()));
+        res_article_recyclerview.setAdapter(new resourcesArticlesAdapter(sample_titles_article,sample_titles_links,getContext()));
     }
 
     @Override

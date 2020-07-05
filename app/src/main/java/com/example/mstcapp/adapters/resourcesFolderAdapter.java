@@ -14,19 +14,19 @@ import com.example.mstcapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResourcesFolderAdapter extends RecyclerView.Adapter<ResourcesFolderAdapter.ResourcesFolderView> {
+public class resourcesFolderAdapter extends RecyclerView.Adapter<resourcesFolderAdapter.ResourcesFolderView> {
     List <String> content_Title = new ArrayList<>();
     public static int mExpandedPosition=-1;
     public static int previousExpandedPosition=-1;
-    public ResourcesFolderAdapter(List<String> sample_title_resfolder) {
+    public resourcesFolderAdapter(List<String> sample_title_resfolder) {
         content_Title=sample_title_resfolder;
     }
 
     @NonNull
     @Override
     public ResourcesFolderView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.resourcesfolder_view,parent,false);
-        return new ResourcesFolderAdapter.ResourcesFolderView(view);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_resources,parent,false);
+        return new resourcesFolderAdapter.ResourcesFolderView(view);
     }
 
     @Override

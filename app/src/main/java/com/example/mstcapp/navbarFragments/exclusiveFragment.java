@@ -10,11 +10,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mstcapp.exclusiveFragments.fragmentAttendance;
-import com.example.mstcapp.exclusiveFragments.fragmentMOM;
-import com.example.mstcapp.exclusiveFragments.fragmentUpdates;
+import com.example.mstcapp.exclusiveFragment.fragmentAttendance;
+import com.example.mstcapp.exclusiveFragment.fragmentMOM;
+import com.example.mstcapp.exclusiveFragment.fragmentUpdates;
 import com.example.mstcapp.R;
-import com.example.mstcapp.adapters.ViewPagerExclusiveAdapter;
+import com.example.mstcapp.adapters.viewPagerExclusiveAdapter;
 import com.google.android.material.tabs.TabLayout;
 
 public class exclusiveFragment extends Fragment {
@@ -38,7 +38,7 @@ public class exclusiveFragment extends Fragment {
 
         tabLayout_exclusive.setupWithViewPager(viewPager_exclusive);
 
-        ViewPagerExclusiveAdapter adapter=new ViewPagerExclusiveAdapter(getChildFragmentManager());
+        viewPagerExclusiveAdapter adapter=new viewPagerExclusiveAdapter(getChildFragmentManager());
         adapter.addFragment(new fragmentMOM(),"MOM");
         adapter.addFragment(new fragmentAttendance(),"Attendance");
         adapter.addFragment(new fragmentUpdates(),"Updates");

@@ -1,10 +1,10 @@
-package com.example.mstcapp.exclusiveFragments;
+package com.example.mstcapp.exclusiveFragment;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,8 +13,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.adapters.attendanceAdapter;
-import com.example.mstcapp.exclusiveModels.attendanceModelClass;
+import com.example.mstcapp.adapters.momRecyclerviewAdapter;
+import com.example.mstcapp.exclusiveModels.momModelClass;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,43 +24,44 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fragmentAttendance extends Fragment {
+public class fragmentMOM extends Fragment {
 
-    List <attendanceModelClass> attendanceModelClasses_list=new ArrayList<>();
-    DatabaseReference databaseReference_attd;
-    List<String> attendance_titles=new ArrayList<>();
-    List<String> content=new ArrayList<>();
-    List<String> attendance_names=new ArrayList<>();
-    RecyclerView recyclerView_attendance;
+
+    List <momModelClass> momModelClass_list=new ArrayList<>();
+    RecyclerView recyclerView_mom;
+    DatabaseReference databaseReference_mom;
+    private ProgressBar mProgressCircular;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View attd_view=inflater.inflate(R.layout.fragment_attendance,container,false);
-        recyclerView_attendance=attd_view.findViewById(R.id.attendance_recyclerview);
-        recyclerView_attendance.setLayoutManager(new LinearLayoutManager(getContext()));
-        initializeData();
+        View mom_view=inflater.inflate(R.layout.fragment_mom,container,false);
 
-        return attd_view;
+        mProgressCircular=mom_view.findViewById(R.id.progressBar_mom);
+        recyclerView_mom=mom_view.findViewById(R.id.mom_recyclerview);
+        recyclerView_mom.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
+        initializeData();
+        return mom_view;
     }
 
     private void initializeData() {
-        attendanceModelClasses_list=new ArrayList<>();
-        databaseReference_attd= FirebaseDatabase.getInstance().getReference().child("Attendance");
-        databaseReference_attd.addValueEventListener(new ValueEventListener() {
+        momModelClass_list=new ArrayList<>();
+
+        databaseReference_mom= FirebaseDatabase.getInstance().getReference().child("Mom");
+        databaseReference_mom.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
                     String title=dataSnapshot1.child("Title").getValue().toString();
-                    Log.i("data" ,title);
-                    content= (List<String>) dataSnapshot1.child("Content").getValue();
+                    String content=dataSnapshot1.child("Content").getValue().toString();
                     String date=dataSnapshot1.child("Date").getValue().toString();
                     String month=dataSnapshot1.child("Month").getValue().toString();
-                    attendanceModelClasses_list.add(new attendanceModelClass(content,date,month,title));
+                    momModelClass_list.add(new momModelClass(content,date,month,title));
                 }
-
-
-                final attendanceAdapter adapter=new attendanceAdapter(attendanceModelClasses_list);
-                recyclerView_attendance.setAdapter(adapter);
+                mProgressCircular.setVisibility(View.INVISIBLE);
+                final momRecyclerviewAdapter adapter=new momRecyclerviewAdapter(momModelClass_list);
+                recyclerView_mom.setAdapter(adapter);
 
 
             }
@@ -70,6 +71,7 @@ public class fragmentAttendance extends Fragment {
 
             }
         });
+
     }
 
     @Override
@@ -81,6 +83,6 @@ public class fragmentAttendance extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
-        attendance_titles.clear();
+
     }
 }

@@ -140,11 +140,6 @@ public class aboutUsFragment extends Fragment {
 
 
                 }
-             /*   if (tab.getPosition() == 0) {
-                    replaceFragment(new infoFragment());
-                } else if (tab.getPosition() == 1) {
-                    replaceFragment(new boardFragment());
-                }*/
             }
 
             @Override
@@ -159,14 +154,6 @@ public class aboutUsFragment extends Fragment {
         });
 
     }
-
-   /* private void replaceFragment(Fragment fragment) {
-        FragmentManager fragmentManager = getChildFragmentManager();
-        FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.replace(R.id.fragment_container, new boardFragment());
-
-        transaction.commit();
-    }*/
 
 
     private void setUpViewPager(ViewPager viewPager) {

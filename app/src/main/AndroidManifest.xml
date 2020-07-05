@@ -11,18 +11,18 @@
         android:hardwareAccelerated="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".forgotPasswordActivity" />
-        <activity android:name=".profileActivity" />
-        <activity android:name=".resourcespageFragments.ResourcesDetails" />
-        <activity android:name=".FirstActivity">
+        <activity android:name=".Activity.forgotPasswordActivity" />
+        <activity android:name=".Activity.profileActivity" />
+        <activity android:name=".resourcespageFragments.resourcesDetails" />
+        <activity android:name=".Activity.firstActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Activity.loginActivity" />
+        <activity android:name=".Activity.MainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"

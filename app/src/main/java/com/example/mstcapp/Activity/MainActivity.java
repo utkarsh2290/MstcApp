@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,10 +18,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.mstcapp.R;
 import com.example.mstcapp.navbarFragments.exclusiveFragment;
 import com.example.mstcapp.navbarFragments.feedFragment;
 import com.example.mstcapp.navbarFragments.resourcesFragment;
-import com.example.mstcapp.navbarFragments.onlineFootprintFragment;
+import com.example.mstcapp.navbarFragments.highlightsFragment;
 
 import com.example.mstcapp.navbarFragments.aboutUsFragment;
 
@@ -100,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         profilePic.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),profileActivity.class));
+                startActivity(new Intent(getApplicationContext(), profileActivity.class));
             }
         });
 
@@ -158,7 +159,7 @@ public class MainActivity extends AppCompatActivity {
                                     appbar_title.setText("HIGHLIGHTS");
                                     appBarLayout_main.setElevation(0);
                                     getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                            new onlineFootprintFragment()).addToBackStack(null).commit();
+                                            new highlightsFragment()).addToBackStack(null).commit();
 
                                     break;
                                 case R.id.nav_info:
@@ -206,7 +207,7 @@ public class MainActivity extends AppCompatActivity {
                                    item.setIcon(R.drawable.ic_highlights);
                                    appBarLayout_main.setElevation(0);
                                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                                           new onlineFootprintFragment()).addToBackStack(null).commit();
+                                           new highlightsFragment()).addToBackStack(null).commit();
                                    appbar_title.setText("HIGHLIGHTS");
                                    break;
                                case R.id.nav_exclusive:

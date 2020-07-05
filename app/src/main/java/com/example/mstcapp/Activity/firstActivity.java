@@ -1,8 +1,5 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Activity;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -11,16 +8,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
+import com.example.mstcapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class FirstActivity extends Activity {
+public class firstActivity extends Activity {
 
     public static final String SHARED_PREFS ="sharedprefs";
 
@@ -45,7 +40,7 @@ public class FirstActivity extends Activity {
 
         firebaseAuth_initial=FirebaseAuth.getInstance();
         if(firebaseAuth_initial.getCurrentUser()!=null){
-            Intent i= new Intent(getApplicationContext(),MainActivity.class);
+            Intent i= new Intent(getApplicationContext(), MainActivity.class);
             nav=true;
             i.putExtra("NAV_CHECK",nav);
             startActivity(i);
@@ -56,7 +51,7 @@ public class FirstActivity extends Activity {
         SharedPreferences sharedPreferences=getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
         final SharedPreferences.Editor editor=sharedPreferences.edit();
         if(sharedPreferences.getBoolean(SHARED_PREFS,false)==true){
-            Intent i= new Intent(getApplicationContext(),MainActivity.class);
+            Intent i= new Intent(getApplicationContext(), MainActivity.class);
             startActivity(i);
             finish();
         }
@@ -73,7 +68,7 @@ public class FirstActivity extends Activity {
         btn_Stc_member.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(FirstActivity.this,LoginActivity.class));
+                startActivity(new Intent(firstActivity.this, loginActivity.class));
                 finish();
 
             }
@@ -83,7 +78,7 @@ public class FirstActivity extends Activity {
             @Override
             public void onClick(View v) {
                 editor.putBoolean(SHARED_PREFS,true).apply();
-                Intent i= new Intent(getApplicationContext(),MainActivity.class);
+                Intent i= new Intent(getApplicationContext(), MainActivity.class);
                 i.putExtra("NAV",false);
                 startActivity(i);
                 finish();

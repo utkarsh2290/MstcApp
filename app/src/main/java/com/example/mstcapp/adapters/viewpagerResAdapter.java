@@ -4,15 +4,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ViewPagerExclusiveAdapter extends FragmentStatePagerAdapter {
+public class viewpagerResAdapter extends FragmentStatePagerAdapter {
+
+    //comments
     private final List<Fragment> fragmentList=new ArrayList<>();
     private final List<String> listTitles=new ArrayList<>();
-    public ViewPagerExclusiveAdapter(@NonNull FragmentManager fm) {
+    public viewpagerResAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 
@@ -26,6 +29,7 @@ public class ViewPagerExclusiveAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return listTitles.size();
     }
+
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {

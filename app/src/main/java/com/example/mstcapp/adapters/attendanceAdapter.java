@@ -5,13 +5,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
@@ -37,7 +34,7 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
     @NonNull
     @Override
     public attendanceViewholer onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.attendance_view,parent,false);
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_attendance,parent,false);
         return new attendanceAdapter.attendanceViewholer(view);
     }
 

@@ -1,4 +1,4 @@
-package com.example.mstcapp.onlineFootprintFragments;
+package com.example.mstcapp.highlightsFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -76,6 +76,7 @@ public class eventsFragments extends Fragment {
         Photo = photo;
     }
 
+    //INITIALIZING VIEWS
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -88,6 +89,8 @@ public class eventsFragments extends Fragment {
         return view;
     }
 
+
+    //ADDING ELEMENTS ON THE RECYLERVIEW
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

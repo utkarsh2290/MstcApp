@@ -1,4 +1,4 @@
-package com.example.mstcapp.onlineFootprintFragments;
+package com.example.mstcapp.highlightsFragment;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -65,6 +65,7 @@ public class githubFragment extends Fragment {
         return view2;
     }
 
+    //ADDING ELEMENTS ON THE RECYLERVIEW
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

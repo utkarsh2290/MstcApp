@@ -1,9 +1,8 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -11,12 +10,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.example.mstcapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -71,6 +70,7 @@ public class profileActivity extends AppCompatActivity {
 
         storeRef= FirebaseStorage.getInstance().getReference().child("Profile Pictures").child(uEmail);
 
+        //FETCHING PROFILE PIC FROM FIRESTORAGE AND PUTTING IT ON THE VIEW
         storeRef.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
@@ -90,13 +90,15 @@ public class profileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 mAuth.signOut();
-                Intent intent =new Intent(getApplicationContext(),FirstActivity.class);
+                Intent intent =new Intent(getApplicationContext(), firstActivity.class);
                 intent.putExtra("Check",true);
                 startActivity(intent);
                 finish();
             }
         });
 
+
+        //FETCHING DATA FROM THE FIREBASE ONE BY ONE AND PUTTING IT ONTO THE VIEWS
         mRef.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

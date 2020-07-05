@@ -1,4 +1,4 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,9 +11,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mstcapp.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.snackbar.Snackbar;
@@ -37,14 +37,17 @@ public class forgotPasswordActivity extends AppCompatActivity {
         relativeLayout=findViewById(R.id.parentLayout);
         mAuth=FirebaseAuth.getInstance();
 
+        //USER ALREADY LOGGED IN
         if(mAuth.getCurrentUser()!=null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+            startActivity(new Intent(getApplicationContext(), MainActivity.class));
             finish();
         }
+
 
         btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //FETCHING EMAIL FROM THE EDIT TEXT
                 String email = mResetEmail.getText().toString().trim();
                 if(email!=null && !email.isEmpty()) {
                     mAuth.sendPasswordResetEmail(email).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -71,6 +74,7 @@ public class forgotPasswordActivity extends AppCompatActivity {
                     });
 
                 }
+                //WHEN EMAIL NOT ENTERED
                 else{
                     Toast.makeText(getApplicationContext(),"Email must be entered.",Toast.LENGTH_SHORT).show();
                 }

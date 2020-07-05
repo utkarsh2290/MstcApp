@@ -3,7 +3,6 @@ package com.example.mstcapp.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,22 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.PagerAdapter;
 
-import com.example.mstcapp.MainActivity;
 import com.example.mstcapp.R;
 
-import java.io.LineNumberInputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
 
-import static android.view.ViewGroup.*;
-import static android.view.ViewGroup.LayoutParams.*;
-
-public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArticlesAdapter.ResourcesArticleView> {
+public class resourcesArticlesAdapter extends RecyclerView.Adapter<resourcesArticlesAdapter.ResourcesArticleView> {
 
     List<String> res_article_titleList=new ArrayList<>();
     List<String> res_article_linkList=new ArrayList<>();
@@ -35,7 +25,7 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
     public static int mExpandedPosition=-1;
     public static int previousExpandedPosition=-1;
 
-    public ResourcesArticlesAdapter(List<String> res_article_titleList, List<String> sample_titles_links, Context context) {
+    public resourcesArticlesAdapter(List<String> res_article_titleList, List<String> sample_titles_links, Context context) {
         this.res_article_titleList = res_article_titleList;
         res_article_linkList=sample_titles_links;
         mContext2=context;
@@ -44,7 +34,7 @@ public class ResourcesArticlesAdapter extends RecyclerView.Adapter<ResourcesArti
     @NonNull
     @Override
     public ResourcesArticleView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.resources_articlelinks_view,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_article,parent,false);
         ResourcesArticleView resourcesArticleView= new ResourcesArticleView(view);
         return resourcesArticleView;
     }

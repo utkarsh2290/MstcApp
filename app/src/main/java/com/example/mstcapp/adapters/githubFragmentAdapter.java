@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.onlineFootprintFragments.githubFragment;
+import com.example.mstcapp.highlightsFragment.githubFragment;
 
 import java.util.List;
 
@@ -33,7 +33,7 @@ public class githubFragmentAdapter extends RecyclerView.Adapter<githubFragmentAd
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v2;
-        v2= LayoutInflater.from(mContext2).inflate(R.layout.github_proj_view, parent, false);
+        v2= LayoutInflater.from(mContext2).inflate(R.layout.item_github, parent, false);
         myViewHolder vHolder2 = new myViewHolder(v2);
         return vHolder2;
     }

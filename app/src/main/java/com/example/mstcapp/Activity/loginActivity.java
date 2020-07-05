@@ -1,12 +1,10 @@
-package com.example.mstcapp;
+package com.example.mstcapp.Activity;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -17,13 +15,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mstcapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends Activity {
+public class loginActivity extends Activity {
 
     private EditText mUserEmail, mUserPassword;
     private Button mUserLogin;
@@ -81,15 +79,15 @@ public class LoginActivity extends Activity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (task.isSuccessful()) {
                                     nav_login=true;
-                                    Toast.makeText(LoginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
-                                    Intent i= new Intent(getApplicationContext(),MainActivity.class);
+                                    Toast.makeText(loginActivity.this, "Login Successful.", Toast.LENGTH_SHORT).show();
+                                    Intent i= new Intent(getApplicationContext(), MainActivity.class);
                                     i.putExtra("NAV_CHECK",true);
                                     startActivity(i);
                                     Log.i("Check2",nav_login+"");
                                     finish();
 
                                 } else {
-                                    Toast.makeText(LoginActivity.this, "Unable to Login" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(loginActivity.this, "Unable to Login" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });
@@ -106,7 +104,7 @@ public class LoginActivity extends Activity {
         mForgotPassword.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),forgotPasswordActivity.class));
+                startActivity(new Intent(getApplicationContext(), forgotPasswordActivity.class));
             }
         });
     }

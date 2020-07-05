@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mstcapp.adapters.FeedAdapter;
+import com.example.mstcapp.adapters.feedAdapter;
 import com.example.mstcapp.R;
 
 import java.util.ArrayList;
@@ -73,7 +73,7 @@ public class feedFragment extends Fragment {
         public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
             view = inflater.inflate(R.layout.fragment_feed, container, false);
             recyclerView_feed = (RecyclerView) view.findViewById(R.id.recyclerview_feed);
-            FeedAdapter feedAdapter = new FeedAdapter(feedList, getContext());
+            feedAdapter feedAdapter = new feedAdapter(feedList, getContext());
             recyclerView_feed.setLayoutManager(new LinearLayoutManager(getActivity()));
             recyclerView_feed.setNestedScrollingEnabled(false);
             recyclerView_feed.setAdapter(feedAdapter);

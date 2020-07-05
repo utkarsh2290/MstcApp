@@ -10,28 +10,28 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mstcapp.adapters.onlineFootprintPagerAdapter;
+import com.example.mstcapp.adapters.highlightsAdapter;
 import com.example.mstcapp.R;
-import com.example.mstcapp.onlineFootprintFragments.eventsFragments;
-import com.example.mstcapp.onlineFootprintFragments.githubFragment;
-import com.example.mstcapp.onlineFootprintFragments.projectFragment;
+import com.example.mstcapp.highlightsFragment.eventsFragments;
+import com.example.mstcapp.highlightsFragment.githubFragment;
+import com.example.mstcapp.highlightsFragment.projectFragment;
 import com.google.android.material.tabs.TabLayout;
 
-public class onlineFootprintFragment extends Fragment {
+public class highlightsFragment extends Fragment {
 
 
     View onlineSubFragment;
     TabLayout tabLayout2;
     ViewPager viewPager2;
 
-    public onlineFootprintFragment() {
+    public highlightsFragment() {
     }
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-        onlineSubFragment=inflater.inflate(R.layout.fragment_online_footprint,container,false);
+        onlineSubFragment=inflater.inflate(R.layout.fragment_highlight,container,false);
 
         viewPager2=onlineSubFragment.findViewById(R.id.viewPager2);
         tabLayout2=onlineSubFragment.findViewById(R.id.tabLayout2);
@@ -69,7 +69,7 @@ public class onlineFootprintFragment extends Fragment {
 
     private void setUpViewPager(ViewPager viewPager) {
         //ADDING FRAGMENTS
-        onlineFootprintPagerAdapter adapter=new onlineFootprintPagerAdapter(getChildFragmentManager());
+        highlightsAdapter adapter=new highlightsAdapter(getChildFragmentManager());
         adapter.addFragment(new eventsFragments(),"Events");
         adapter.addFragment(new projectFragment(),"Projects");
         adapter.addFragment(new githubFragment(),"Github");

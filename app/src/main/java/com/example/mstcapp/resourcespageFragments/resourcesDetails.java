@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.mstcapp.R;
-import com.example.mstcapp.adapters.ViewpagerResAdapter;
-import com.example.mstcapp.profileActivity;
+import com.example.mstcapp.adapters.viewpagerResAdapter;
+import com.example.mstcapp.Activity.profileActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.AppBarLayout;
@@ -26,7 +26,7 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
-public class ResourcesDetails extends AppCompatActivity {
+public class resourcesDetails extends AppCompatActivity {
     private TabLayout tabLayout;
     private AppBarLayout appBarLayout;
     private ViewPager viewPager;
@@ -81,7 +81,7 @@ public class ResourcesDetails extends AppCompatActivity {
         }
 
         //tab layout set up
-        ViewpagerResAdapter adapter=new ViewpagerResAdapter(getSupportFragmentManager());
+        viewpagerResAdapter adapter=new viewpagerResAdapter(getSupportFragmentManager());
         adapter.addFragment(new roadmapFragment(),"Roadmap");
         adapter.addFragment(new resfolderFragment(),"Resources");
         adapter.addFragment(new articlelinksFragment(),"Articles");

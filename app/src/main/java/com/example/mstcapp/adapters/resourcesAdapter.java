@@ -11,17 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.resourcespageFragments.ResourcesDetails;
+import com.example.mstcapp.resourcespageFragments.resourcesDetails;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.ResourcesView> {
+public class resourcesAdapter extends RecyclerView.Adapter<resourcesAdapter.ResourcesView> {
      static List<String> domains= new ArrayList<>();
      List<Integer> domain_background_Id=new ArrayList<>();
 
 
-    public ResourcesAdapter(List<String> domains,List <Integer> domainbg) {
+    public resourcesAdapter(List<String> domains, List <Integer> domainbg) {
         this.domains = domains;    //constructor used for initialising the list in the the view
         domain_background_Id=domainbg;
     }
@@ -29,8 +29,8 @@ public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.Reso
     @NonNull
     @Override
     public ResourcesView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //fills the view with card view layout made (row_domains)
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.row_domains,parent,false);
+        //fills the view with card view layout made (item_resources_domain)
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_resources_domain,parent,false);
         return new ResourcesView(view);
     }
 
@@ -61,7 +61,7 @@ public class ResourcesAdapter extends RecyclerView.Adapter<ResourcesAdapter.Reso
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent i =new Intent(v.getContext(), ResourcesDetails.class);
+                    Intent i =new Intent(v.getContext(), resourcesDetails.class);
                     i.putExtra("test",domains.get(getAdapterPosition()));
                     v.getContext().startActivity(i);
                 }

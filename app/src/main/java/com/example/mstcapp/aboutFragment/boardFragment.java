@@ -17,6 +17,9 @@ public class boardFragment extends Fragment {
     public boardFragment() {
     }
 
+
+
+    //INFLATING VIEWS ON THE BOARD SUBFRAGMENT
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

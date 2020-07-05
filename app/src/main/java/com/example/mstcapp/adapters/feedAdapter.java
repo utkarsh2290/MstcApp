@@ -15,14 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.mstcapp.R;
 import com.example.mstcapp.navbarFragments.feedFragment;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
+public class feedAdapter extends RecyclerView.Adapter <feedAdapter.FeedView>{
     List<feedFragment>mData_feed;
     Context mContext;
 
-    public FeedAdapter(List<feedFragment>mData,Context context) {
+    public feedAdapter(List<feedFragment>mData, Context context) {
        mData_feed= mData;
         mContext=context;
     }
@@ -30,8 +29,8 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     @NonNull
     @Override
     public FeedView onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        //fills the view with card view layout made (feed_view)
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.feed_view,parent,false);
+        //fills the view with card view layout made (item_feed)
+        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.item_feed,parent,false);
         return new FeedView(view);
     }
     //clickable to browser with image

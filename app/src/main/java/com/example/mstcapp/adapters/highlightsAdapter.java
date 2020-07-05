@@ -9,12 +9,12 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class onlineFootprintPagerAdapter extends FragmentPagerAdapter {
+public class highlightsAdapter extends FragmentPagerAdapter {
 
     private final List<Fragment> fragmentList2=new ArrayList<>();
     private final List<String>fragmentListTitles2=new ArrayList<>();
 
-    public onlineFootprintPagerAdapter(@NonNull FragmentManager fm) {
+    public highlightsAdapter(@NonNull FragmentManager fm) {
         super(fm);
     }
 

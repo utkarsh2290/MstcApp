@@ -18,18 +18,17 @@ public class infoFragment extends Fragment {
     }
     TextView textView_info;
 
+
+    //INFLATING VIEW ONTO THE INFO SUB FRAGMENT
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view=inflater.inflate(R.layout.fragment_info,container,false);
-        /*FragmentManager manager = getChildFragmentManager();
-        FragmentTransaction transaction = manager.beginTransaction();
-        transaction.add(R.id.fragment_container, new boardFragment());
-        transaction.commit();
-*/
         return view;
     }
 
+
+    //INITIALIZING THE VIEW OF A SUB FRAGMENT
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
