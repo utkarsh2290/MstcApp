@@ -13,7 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.onlineFootprint.eventsFragments;
+import com.example.mstcapp.onlineFootprintFragments.eventsFragments;
 
 import java.util.List;
 
@@ -31,7 +31,7 @@ public class eventFragmentAdapter extends RecyclerView.Adapter<eventFragmentAdap
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
-        v= LayoutInflater.from(mContext).inflate(R.layout.items_event,parent,false);
+        v= LayoutInflater.from(mContext).inflate(R.layout.events_view,parent,false);
         myViewHolder vHolder=new myViewHolder(v);
         return vHolder;
     }

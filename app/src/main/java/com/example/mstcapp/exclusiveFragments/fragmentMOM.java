@@ -1,9 +1,10 @@
-package com.example.mstcapp.Exclusive;
+package com.example.mstcapp.exclusiveFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -23,29 +24,32 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class fragmentUpdates extends Fragment {
+public class fragmentMOM extends Fragment {
 
 
-    List<momModelClass> updatesModelClassList=new ArrayList<momModelClass>();
-    RecyclerView recyclerView_updates;
-    DatabaseReference databaseReference_updates;
+    List <momModelClass> momModelClass_list=new ArrayList<>();
+    RecyclerView recyclerView_mom;
+    DatabaseReference databaseReference_mom;
+    private ProgressBar mProgressCircular;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View updates_view=inflater.inflate(R.layout.fragment_updates,container,false);
-        recyclerView_updates=updates_view.findViewById(R.id.updates_recyclerview);
-        recyclerView_updates.setLayoutManager(new LinearLayoutManager(getContext()));
+        View mom_view=inflater.inflate(R.layout.fragment_mom,container,false);
+
+        mProgressCircular=mom_view.findViewById(R.id.progressBar_mom);
+        recyclerView_mom=mom_view.findViewById(R.id.mom_recyclerview);
+        recyclerView_mom.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
         initializeData();
-
-        return updates_view;
+        return mom_view;
     }
 
     private void initializeData() {
-        updatesModelClassList=new ArrayList<momModelClass>();
+        momModelClass_list=new ArrayList<>();
 
-        databaseReference_updates= FirebaseDatabase.getInstance().getReference().child("Updates");
-        databaseReference_updates.addValueEventListener(new ValueEventListener() {
+        databaseReference_mom= FirebaseDatabase.getInstance().getReference().child("Mom");
+        databaseReference_mom.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 for(DataSnapshot dataSnapshot1:dataSnapshot.getChildren()) {
@@ -53,10 +57,12 @@ public class fragmentUpdates extends Fragment {
                     String content=dataSnapshot1.child("Content").getValue().toString();
                     String date=dataSnapshot1.child("Date").getValue().toString();
                     String month=dataSnapshot1.child("Month").getValue().toString();
-                    updatesModelClassList.add(new momModelClass(content,date,month,title));
+                    momModelClass_list.add(new momModelClass(content,date,month,title));
                 }
-                final momRecyclerviewAdapter adapter=new momRecyclerviewAdapter(updatesModelClassList);
-                recyclerView_updates.setAdapter(adapter);
+                mProgressCircular.setVisibility(View.INVISIBLE);
+                final momRecyclerviewAdapter adapter=new momRecyclerviewAdapter(momModelClass_list);
+                recyclerView_mom.setAdapter(adapter);
+
 
             }
 
@@ -72,14 +78,11 @@ public class fragmentUpdates extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
-
-
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
+
     }
 }

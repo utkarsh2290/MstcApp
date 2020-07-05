@@ -13,11 +13,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
-import com.example.mstcapp.onlineFootprint.projectFragment;
+import com.example.mstcapp.onlineFootprintFragments.projectFragment;
 
-import org.w3c.dom.Text;
-
-import java.text.CollationElementIterator;
 import java.util.List;
 
 public class projectRecyclerAdapter extends RecyclerView.Adapter<projectRecyclerAdapter.myViewHolder> {
@@ -36,7 +33,7 @@ public class projectRecyclerAdapter extends RecyclerView.Adapter<projectRecycler
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View v;
-        v = LayoutInflater.from(mContext1).inflate(R.layout.items_project, parent, false);
+        v = LayoutInflater.from(mContext1).inflate(R.layout.project_view, parent, false);
         myViewHolder vHolder = new myViewHolder(v);
         return vHolder;
 

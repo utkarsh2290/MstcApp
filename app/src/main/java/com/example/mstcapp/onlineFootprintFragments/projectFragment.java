@@ -1,4 +1,4 @@
-package com.example.mstcapp.onlineFootprint;
+package com.example.mstcapp.onlineFootprintFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -74,7 +74,7 @@ public class projectFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.projectsfragment,container,false);
+        view=inflater.inflate(R.layout.fragment_projects,container,false);
         recyclerView1=(RecyclerView)view.findViewById(R.id.projects_recycler1);
         projectRecyclerAdapter projectRecyclerAdapter= new projectRecyclerAdapter(getContext(),projectsList);
         recyclerView1.setLayoutManager(new LinearLayoutManager(getActivity()));

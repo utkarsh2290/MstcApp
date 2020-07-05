@@ -13,23 +13,18 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mstcapp.R;
+import com.example.mstcapp.navbarFragments.feedFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
-    List <Integer> samples=new ArrayList<>();
-    List <String> desc_sample=new ArrayList<>();
-    List <String> title_sample=new ArrayList<>();
-    List <String> link_sample=new ArrayList<>();
+    List<feedFragment>mData_feed;
     Context mContext;
 
-    public FeedAdapter(List<Integer> urls_sample, List<String> desc, List <String> title,List <String> links,Context context) {
-    samples=urls_sample;
-    desc_sample=desc;
-    title_sample=title;
-    link_sample=links;
-    mContext=context;
+    public FeedAdapter(List<feedFragment>mData,Context context) {
+       mData_feed= mData;
+        mContext=context;
     }
 
     @NonNull
@@ -44,14 +39,14 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
     @Override
     public void onBindViewHolder(@NonNull FeedView holder, final int position) {
         //used to set everything in the feed page
-        holder.feed_imageView.setImageResource(samples.get(position));
-        holder.desc_textView.setText(desc_sample.get(position));
-        holder.title_textView.setText(title_sample.get(position));
-        holder.link_textView.setText(link_sample.get(position));
+        holder.desc_textView.setText(mData_feed.get(position).getDesc_sample1());
+        holder.title_textView.setText(mData_feed.get(position).getTitle_sample1());
+        holder.feed_imageView.setImageResource(mData_feed.get(position).getFeedPicture());
+        holder.link_textView.setText(mData_feed.get(position).getLink_sample1());
         holder.link_textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String link=link_sample.get(position);
+                String link=mData_feed.get(position).getLink_sample1();
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData((Uri.parse(link)));
                 mContext.startActivity(intent);
@@ -61,7 +56,7 @@ public class FeedAdapter extends RecyclerView.Adapter <FeedAdapter.FeedView>{
 
     @Override
     public int getItemCount() {
-        return samples.size();
+        return mData_feed.size();
     }
 
     public class FeedView extends RecyclerView.ViewHolder{

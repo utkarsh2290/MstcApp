@@ -1,4 +1,4 @@
-package com.example.mstcapp.ParentFragments;
+package com.example.mstcapp.navbarFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,9 +12,9 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.mstcapp.adapters.onlineFootprintPagerAdapter;
 import com.example.mstcapp.R;
-import com.example.mstcapp.onlineFootprint.eventsFragments;
-import com.example.mstcapp.onlineFootprint.githubFragment;
-import com.example.mstcapp.onlineFootprint.projectFragment;
+import com.example.mstcapp.onlineFootprintFragments.eventsFragments;
+import com.example.mstcapp.onlineFootprintFragments.githubFragment;
+import com.example.mstcapp.onlineFootprintFragments.projectFragment;
 import com.google.android.material.tabs.TabLayout;
 
 public class onlineFootprintFragment extends Fragment {

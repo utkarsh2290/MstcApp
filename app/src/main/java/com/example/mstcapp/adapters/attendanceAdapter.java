@@ -1,6 +1,7 @@
 package com.example.mstcapp.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,9 +46,9 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
         holder.attendance_title.setText(attendanceModelClassList.get(position).getTitle());
         List<String> contents=attendanceModelClassList.get(position).getContent();
         int size=attendanceModelClassList.get(position).getContent().size();
-        for(int i=0;i<size;i++){
-            holder.attendance_content.setText(contents.get(i)+"\n");
-        }
+        holder.attendance_content.setText(getData(size,contents));
+        Log.i("Size",size+"");
+
         holder.date_num.setText(attendanceModelClassList.get(position).getDate());
         holder.date_month.setText(attendanceModelClassList.get(position).getMonth());
         final boolean isExpanded = position==mExpandedPosition;
@@ -67,6 +68,14 @@ public class attendanceAdapter extends RecyclerView.Adapter <attendanceAdapter.a
                 notifyItemChanged(position);
             }
         });
+    }
+
+    private String getData(int n,List<String> arr) {
+        String C="";
+        for(int i=0;i<n;i++){
+            C+=arr.get(i)+"\n";
+        }
+        return C;
     }
 
     @Override

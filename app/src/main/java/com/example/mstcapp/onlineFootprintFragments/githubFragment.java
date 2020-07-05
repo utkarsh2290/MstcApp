@@ -1,4 +1,4 @@
-package com.example.mstcapp.onlineFootprint;
+package com.example.mstcapp.onlineFootprintFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -11,9 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.mstcapp.adapters.eventFragmentAdapter;
 import com.example.mstcapp.adapters.githubFragmentAdapter;
-import com.example.mstcapp.adapters.projectRecyclerAdapter;
 import com.example.mstcapp.R;
 
 import java.util.ArrayList;
@@ -59,7 +57,7 @@ public class githubFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view2=inflater.inflate(R.layout.github_proj_fragment,container,false);
+        view2=inflater.inflate(R.layout.fragment_github_proj,container,false);
         recyclerView2=(RecyclerView)view2.findViewById(R.id.github_recycler);
         githubFragmentAdapter githubFragmentAdapter= new githubFragmentAdapter(getContext(),githubProjList);
         recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity()));

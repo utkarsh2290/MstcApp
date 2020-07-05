@@ -1,4 +1,4 @@
-package com.example.mstcapp.navbar;
+package com.example.mstcapp.navbarFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

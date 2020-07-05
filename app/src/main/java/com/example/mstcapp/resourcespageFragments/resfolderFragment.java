@@ -1,7 +1,6 @@
-package com.example.mstcapp.resourcespage;
+package com.example.mstcapp.resourcespageFragments;
 
 import android.os.Bundle;
-import android.os.RecoverySystem;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;

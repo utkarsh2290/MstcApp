@@ -8,7 +8,6 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.mstcapp.R;
@@ -21,7 +20,7 @@ public class boardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view1=inflater.inflate(R.layout.boardfragment,container,false);
+        view1=inflater.inflate(R.layout.fragment_board,container,false);
         ImageView imageView=(ImageView)view1.findViewById(R.id.photoPresident);
         ImageView imageView2=(ImageView)view1.findViewById(R.id.photoProLead);
         ImageView imageView3=(ImageView)view1.findViewById(R.id.photoTechMentor);

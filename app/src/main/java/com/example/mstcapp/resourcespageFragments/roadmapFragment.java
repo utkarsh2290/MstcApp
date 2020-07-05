@@ -1,4 +1,4 @@
-package com.example.mstcapp.resourcespage;
+package com.example.mstcapp.resourcespageFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

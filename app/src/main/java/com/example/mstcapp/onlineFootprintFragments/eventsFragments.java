@@ -1,4 +1,4 @@
-package com.example.mstcapp.onlineFootprint;
+package com.example.mstcapp.onlineFootprintFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -79,7 +79,7 @@ public class eventsFragments extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        view=inflater.inflate(R.layout.eventsfragment,container,false);
+        view=inflater.inflate(R.layout.fragment_events,container,false);
         recyclerView=(RecyclerView)view.findViewById(R.id.events_recycler);
         eventFragmentAdapter recyclerAdapter= new eventFragmentAdapter(getContext(),eventsList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));

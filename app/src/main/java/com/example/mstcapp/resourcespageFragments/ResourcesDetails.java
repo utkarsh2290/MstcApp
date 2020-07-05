@@ -1,34 +1,25 @@
-package com.example.mstcapp.resourcespage;
+package com.example.mstcapp.resourcespageFragments;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.mstcapp.MainActivity;
-import com.example.mstcapp.ParentFragments.aboutUsFragment;
-import com.example.mstcapp.ParentFragments.onlineFootprintFragment;
 import com.example.mstcapp.R;
 import com.example.mstcapp.adapters.ViewpagerResAdapter;
-import com.example.mstcapp.navbar.feedFragment;
-import com.example.mstcapp.navbar.resourcesFragment;
 import com.example.mstcapp.profileActivity;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.appbar.AppBarLayout;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

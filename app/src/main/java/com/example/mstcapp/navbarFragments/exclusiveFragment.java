@@ -1,25 +1,20 @@
-package com.example.mstcapp.navbar;
+package com.example.mstcapp.navbarFragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TableLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.mstcapp.Exclusive.fragmentAttendance;
-import com.example.mstcapp.Exclusive.fragmentMOM;
-import com.example.mstcapp.Exclusive.fragmentUpdates;
+import com.example.mstcapp.exclusiveFragments.fragmentAttendance;
+import com.example.mstcapp.exclusiveFragments.fragmentMOM;
+import com.example.mstcapp.exclusiveFragments.fragmentUpdates;
 import com.example.mstcapp.R;
 import com.example.mstcapp.adapters.ViewPagerExclusiveAdapter;
-import com.example.mstcapp.resourcespage.articlelinksFragment;
-import com.example.mstcapp.resourcespage.resfolderFragment;
-import com.example.mstcapp.resourcespage.roadmapFragment;
-import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.tabs.TabLayout;
 
 public class exclusiveFragment extends Fragment {

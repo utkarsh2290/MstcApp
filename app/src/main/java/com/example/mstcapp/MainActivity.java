@@ -13,19 +13,17 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.example.mstcapp.navbar.exclusiveFragment;
-import com.example.mstcapp.navbar.feedFragment;
-import com.example.mstcapp.navbar.resourcesFragment;
-import com.example.mstcapp.ParentFragments.onlineFootprintFragment;
+import com.example.mstcapp.navbarFragments.exclusiveFragment;
+import com.example.mstcapp.navbarFragments.feedFragment;
+import com.example.mstcapp.navbarFragments.resourcesFragment;
+import com.example.mstcapp.navbarFragments.onlineFootprintFragment;
 
-import com.example.mstcapp.ParentFragments.aboutUsFragment;
+import com.example.mstcapp.navbarFragments.aboutUsFragment;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
