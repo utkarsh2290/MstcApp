@@ -1,0 +1,93 @@
+{
+  "project_info": {
+    "project_number": "349110978238",
+    "firebase_url": "https://micapp-6f926.firebaseio.com",
+    "project_id": "micapp-6f926",
+    "storage_bucket": "micapp-6f926.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349110978238:android:c3b3a8d18e23fe793c40ef",
+        "android_client_info": {
+          "package_name": "com.example.mstcapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349110978238-g30oqparhhn6lhece2rf3o3v8gac0cml.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mstcapp",
+            "certificate_hash": "38e167da18a2a08d71d9e07f5bd97710f4586348"
+          }
+        },
+        {
+          "client_id": "349110978238-ior8nco43oabtajgmj3h8qvjtbn479u1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mstcapp",
+            "certificate_hash": "3ae486bcd9906b782903a78cde6abdb2ee51e212"
+          }
+        },
+        {
+          "client_id": "349110978238-ebfs4nfhkj2a7kbt9517us7lml4ojkch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVNma_VQjHlTDOxGVP2_g3EiJO7ZYyVo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349110978238-ebfs4nfhkj2a7kbt9517us7lml4ojkch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:349110978238:android:9daffc98562add743c40ef",
+        "android_client_info": {
+          "package_name": "mstc.adminApp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "349110978238-eiokjge1sf6kkiu77bc1f7ktk5hc3lbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mstc.adminApp",
+            "certificate_hash": "3ae486bcd9906b782903a78cde6abdb2ee51e212"
+          }
+        },
+        {
+          "client_id": "349110978238-ebfs4nfhkj2a7kbt9517us7lml4ojkch.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVNma_VQjHlTDOxGVP2_g3EiJO7ZYyVo0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "349110978238-ebfs4nfhkj2a7kbt9517us7lml4ojkch.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
